@@ -7,19 +7,18 @@ table.table.table-bordered
       td= t 'reservations.start_date'
       td= t 'reservations.end_date'
       td= t 'reservations.name'
+      td= t 'reservations.lot'
       td= t 'reservations.rig_type'
-      td= t 'reservations.slides'
-      td= t 'reservations.length'
-      td= t 'reservations.space'
       td &nbsp;
   tbody
-    tr
-      td #
-      td #
-      td #
-      td #
-      td #
-      td #
-      td #
-      td #
-      td #
+    -@reservations.each do |reservation|
+      tr
+        td= link_to(reservation.id, '#')
+        td= reservation.start_date
+        td= reservation.end_date
+        td= link_to(reservation.name, '#')
+        td
+        td
+        td
+          = bootstrap_button('Show', '#', size: 'btn-xs')
+          = bootstrap_button('Check In', '#', size: 'btn-xs')

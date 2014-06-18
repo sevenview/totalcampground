@@ -32,3 +32,14 @@ gem 'slim-rails'
 group :development do
   gem 'thin'
 end
+
+group :test do
+  gem 'poltergeist'
+end
+
+group :development, :test do
+  gem 'rspec', '~> 3.0.0'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'ffaker'
+end
