@@ -9,7 +9,6 @@ Ruby 2+
 Configuration
 -------------
 * Copy config/database.yml.dist to config/database.yml and customize
-* Generate a
 
 Deployment
 ----------
