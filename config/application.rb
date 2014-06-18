@@ -33,5 +33,9 @@ module TotalCampground
       g.stylesheets false
       g.helper false
     end
+
+    # Custom settings
+    config.app_name = "Total Campground"
+    config.app_version = "0.0.1"
   end
 end
