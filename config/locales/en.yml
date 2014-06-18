@@ -21,3 +21,13 @@
 
 en:
   hello: "Hello world"
+  reservations:
+    reservations: Reservations
+    start_date: Start Date
+    end_date: End Date
+    name: Name
+    rig_type: Rig Type
+    slides: Slides
+    length: Length
+    space: Space
+    reservation_number: 'Res #'
