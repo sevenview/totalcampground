@@ -1,4 +1,4 @@
-nav.navbar.navbar-default role="navigation"
+nav.navbar.navbar-default.navbar-static-top role="navigation"
   .container-fluid
     .navbar-header
       button.navbar-toggle data-target=".navbar-collapse" data-toggle="collapse" type="button"
@@ -6,5 +6,9 @@ nav.navbar.navbar-default role="navigation"
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      = link_to "Total Campground", root_path, class: 'navbar-brand'
+      = link_to Rails.application.config.app_name, root_path, class: 'navbar-brand'
     .navbar-collapse.collapse
+      ul.nav.navbar-nav
+        li= link_to 'Reservation List', reservations_path
+        li= link_to 'In Park List', '#'
+        li= link_to 'New Reservation', '#'
