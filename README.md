@@ -3,8 +3,8 @@ Total Campground
 
 Requirements
 ------------
-[Ruby on Rails](http://www.rubyonrails.org) 4.1
-Ruby 2+
+* [Ruby on Rails](http://www.rubyonrails.org) 4.1
+* Ruby 2+
 
 Configuration
 -------------
