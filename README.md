@@ -1,28 +1,16 @@
-== README
+OpenCampground v2
+=================
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Requirements
+------------
+[Ruby on Rails](http://www.rubyonrails.org) 4.1
+Ruby 2+
 
-Things you may want to cover:
+Configuration
+-------------
+* Copy config/database.yml.dist to config/database.yml and customize
+* Generate a
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Deployment
+----------
+* Configure SECRET_KEY_BASE environment variable
