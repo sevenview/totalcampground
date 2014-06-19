@@ -17,3 +17,8 @@ end
 puts "Campers..."
 Camper.delete_all
 FactoryGirl.create_list(:camper, 30)
+
+# Lots
+puts "Lots..."
+Lot.delete_all
+FactoryGirl.create_list(:lot, 250)
