@@ -6,9 +6,12 @@ nav.navbar.navbar-default.navbar-static-top role="navigation"
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      = link_to Rails.application.config.app_name, root_path, class: 'navbar-brand'
+      = link_to root_path, class: 'navbar-brand' do
+        => image_tag "icon-trees.png", size: "30x30", class: "logo logo-fixed"
+        = Rails.application.config.app_name
     .navbar-collapse.collapse
       ul.nav.navbar-nav
-        li= link_to 'Reservation List', reservations_path
-        li= link_to 'In Park List', '#'
-        li= link_to 'New Reservation', new_reservation_path
+        li = link_to 'Reservation List', reservations_path
+        li = link_to 'In Park List', '#'
+      ul.nav.navbar-nav.navbar-right
+        li = link_to 'New Reservation', new_reservation_path

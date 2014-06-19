@@ -3,7 +3,8 @@ h1 New Reservation
 = error_messages_for @reservation
 
 = form_for @reservation, html: {role: 'form'} do |f|
-  .row
+  .container
+    .row
     = f.label :camper
     = f.collection_select :camper_id, @campers, :id, :full_name, {}, {class: 'form-control'}
 
