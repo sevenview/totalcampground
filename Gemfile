@@ -39,6 +39,8 @@ end
 
 group :test do
   gem 'poltergeist'
+  gem 'capybara'
+  gem 'launchy'
   gem 'shoulda-matchers'
 end
 
