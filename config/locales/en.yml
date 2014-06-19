@@ -31,3 +31,7 @@ en:
     length: Length
     space: Space
     reservation_number: 'Number'
+    created_message: A new reservation has been created.
+  campers:
+    camper: Camper
+    

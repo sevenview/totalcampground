@@ -1,0 +1,35 @@
+h1 New Reservation
+
+= error_messages_for @reservation
+
+= form_for @reservation, html: {role: 'form'} do |f|
+  .row
+    = f.label :camper
+    = f.collection_select :camper_id, @campers, :id, :full_name, {}, {class: 'form-control'}
+
+    = f.label :start_date, 'Arrive'
+    = f.text_field :start_date, class: 'form-control'
+
+    = f.label :end_date, 'Depart'
+    = f.text_field :end_date, class: 'form-control'
+
+    = f.label :lot
+    = f.collection_select :lot_id, @lots, :id, :name, {}, {class: 'form-control'}
+
+    = f.label :adults
+    = f.text_field :adults, class: 'form-control'
+
+    = f.label :children
+    = f.text_field :children, class: 'form-control'
+
+    = f.label :pets
+    = f.text_field :pets, class: 'form-control'
+
+    = f.label :notes
+    = f.text_area :notes, class: 'form-control'
+
+    => f.label :checked_in
+    = f.check_box :checked_in
+
+    p
+    = f.submit 'Create Reservation', class: 'btn btn-primary'

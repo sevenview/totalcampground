@@ -10,7 +10,8 @@ html
     = render 'shared/nav'
     .container
       .row
-         =yield
+        = render 'shared/flashes'
+        = yield
 
       .row
         #footer.text-muted.small
