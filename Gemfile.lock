@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/sevenview/sevenhelpers.git
+  revision: 7fda968e6801eff74121c5590eadc5c5f8592864
+  specs:
+    sevenhelpers (1.2.0)
+      rails (>= 3.2.13)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -234,6 +241,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
+  sevenhelpers!
   shoulda-matchers
   slim-rails
   spring

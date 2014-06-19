@@ -49,3 +49,5 @@ group :development, :test do
 end
 
 gem 'ffaker', group: [:development, :test, :staging]
+
+gem 'sevenhelpers', git: 'https://github.com/sevenview/sevenhelpers.git'
