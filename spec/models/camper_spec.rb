@@ -16,4 +16,12 @@ describe Camper, type: :model do
     camper.valid?
     expect(camper.errors[:base].size).to eq(1)
   end
+
+  describe "#full_name" do
+    it "returns the camper's first and last name concatenated" do
+      camper.first_name = 'John'
+      camper.last_name  = 'Doe'
+      expect(camper.full_name).to eq('John Doe')
+    end  
+  end
 end

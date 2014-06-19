@@ -5,6 +5,6 @@ feature "Reservations", type: :feature do
     reservation = FactoryGirl.create(:reservation)
     visit reservations_path
     expect(page).to have_selector('h1', text: 'Reservations')
-    expect(page).to have_content reservation.name
+    expect(page).to have_content reservation.camper.full_name
   end
 end
