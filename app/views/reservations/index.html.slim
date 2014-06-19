@@ -8,7 +8,6 @@ table.table.table-bordered
       td= t 'reservations.end_date'
       td= t 'reservations.name'
       td= t 'reservations.lot'
-      td= t 'reservations.rig_type'
       td &nbsp;
   tbody
     -@reservations.each do |reservation|
@@ -19,6 +18,5 @@ table.table.table-bordered
         td= link_to(reservation.name, '#')
         td
         td
-        td
-          = bootstrap_button('Show', '#', size: 'btn-xs')
-          = bootstrap_button('Check In', '#', size: 'btn-xs')
+          = link_to('Show', '#', class: 'btn-xs btn-link')
+          = link_to('Check In', '#', class: 'btn-xs btn-link')
