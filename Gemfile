@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.1.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
@@ -34,6 +35,7 @@ end
 
 group :test do
   gem 'poltergeist'
+  gem 'shoulda-matchers'
 end
 
 group :development, :test do
