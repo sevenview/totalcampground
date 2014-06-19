@@ -11,3 +11,9 @@ html
     .container
       .row
          =yield
+
+      .row
+        #footer.text-muted.small
+          ' &copy #{Date.today.year}. Crafted by
+          a.text-muted> href="http://www.sevenview.ca"  Sevenview Studios
+          ' in Springdale, NL
