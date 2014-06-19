@@ -31,6 +31,10 @@ group :development do
   gem 'thin'
   gem 'spring'
   gem 'lol_dba' # Find missing indexes with rake db:find_indexes
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-migrate'
+  gem 'guard-bundler'
 end
 
 group :test do
