@@ -13,3 +13,8 @@ Configuration
 Deployment
 ----------
 * Configure SECRET_KEY_BASE environment variable
+
+Tasks
+-----
+In addion to seeding your database with the standard `rake db:seed`, you can
+also load in a set of sample data with `rake db:sample_data`.
