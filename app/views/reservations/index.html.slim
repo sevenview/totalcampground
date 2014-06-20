@@ -12,11 +12,13 @@ table.table.table-striped.table-responsive
   tbody
     -@reservations.each do |reservation|
       tr
-        td= link_to(reservation.id, '#')
-        td= reservation.start_date
-        td= reservation.end_date
-        td= link_to(reservation.camper.full_name, '#')
-        td= link_to(reservation.lot.number, '#')
+        td = link_to(reservation.id, '#')
+        td = reservation.start_date
+        td = reservation.end_date
         td
-          = link_to('Show', '#', class: 'btn-xs btn-link')
-          = link_to('Check In', '#', class: 'btn-xs btn-link')
+          = link_to(reservation.camper.full_name, '#')
+        td = link_to(reservation.lot.number, '#')
+        td
+          = link_to('Show', '#', class: 'btn btn-xs btn-default')
+          '
+          = link_to('Check In', '#', class: 'btn btn-xs btn-success')
