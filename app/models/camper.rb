@@ -7,6 +7,6 @@ class Camper < ActiveRecord::Base
   end
 
   def check_for_presence_of_phone_or_mobile_number
-    errors.add(:base, 'You must provide either a Phone or Mobile number') if phone.blank? or mobile.blank?
+    errors.add(:base, 'You must provide either a Phone or Mobile number') if phone.blank? || mobile.blank?
   end
 end

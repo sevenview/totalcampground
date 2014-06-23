@@ -1,14 +1,14 @@
 require 'rails_helper'
 
-feature "Reservations", type: :feature do
-  scenario "Views the list of reservations" do
+feature 'Reservations', type: :feature do
+  scenario 'Views the list of reservations' do
     reservation = FactoryGirl.create(:reservation)
     visit reservations_path
     expect(page).to have_selector('h1', text: 'Reservations')
     expect(page).to have_content reservation.camper.full_name
   end
 
-  scenario "User adds a new reservation" do
+  scenario 'User adds a new reservation' do
     camper = FactoryGirl.create(:camper)
     lot = FactoryGirl.create(:lot)
     visit root_path
@@ -26,12 +26,12 @@ feature "Reservations", type: :feature do
     expect(page).to have_content('A new reservation has been created.')
   end
 
-  scenario "User adds a new reservation with invalid data" do
-    camper = FactoryGirl.create(:camper)
-    lot = FactoryGirl.create(:lot)
+  scenario 'User adds a new reservation with invalid data' do
+    FactoryGirl.create(:camper)
+    FactoryGirl.create(:lot)
     visit root_path
     click_link 'New Reservation'
     click_button 'Create Reservation'
-    expect(page).to have_content('errors')    
+    expect(page).to have_content('errors')
   end
 end

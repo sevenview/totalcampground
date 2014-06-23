@@ -5,15 +5,15 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
-    get_data_for_dropdowns
+    data_for_dropdowns
   end
 
   def create
     @reservation = Reservation.new(reservation_params)
-    get_data_for_dropdowns
+    data_for_dropdowns
 
     if @reservation.save
-      flash.notice = t("reservations.created_message")
+      flash.notice = t('reservations.created_message')
       redirect_to reservations_path
     else
       render :new
@@ -21,6 +21,7 @@ class ReservationsController < ApplicationController
   end
 
   private
+
   def reservation_params
     params.require(:reservation).permit(
       :camper_id, :start_date, :end_date, :lot_id,
@@ -28,7 +29,7 @@ class ReservationsController < ApplicationController
     )
   end
 
-  def get_data_for_dropdowns
+  def data_for_dropdowns
     @campers = Camper.all.order(:last_name, :first_name)
     @lots = Lot.all.order(:number)
   end

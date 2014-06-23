@@ -3,7 +3,7 @@
 FactoryGirl.define do
   factory :reservation do
     start_date Date.today
-    end_date  Date.today + 1
+    end_date Date.today + 1
     adults 2
     camper
     lot
