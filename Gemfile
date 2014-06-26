@@ -35,6 +35,7 @@ group :development do
   gem 'guard-rspec'
   gem 'guard-migrate'
   gem 'guard-bundler'
+  gem 'foreman', require: false
 end
 
 group :test do
