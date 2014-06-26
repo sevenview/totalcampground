@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-gem 'bootstrap-sass', '~> 3.1.1.0'
+gem 'bootstrap-sass', '~> 3.2.0.0'
 gem 'slim-rails'
 
 group :development do
