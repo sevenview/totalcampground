@@ -1,24 +1,26 @@
 h1= t 'reservations.reservations'
 
-table.table.table-striped.table-responsive
-  thead
-    tr
-      td= t 'reservations.reservation_number'
-      td= t 'reservations.start_date'
-      td= t 'reservations.end_date'
-      td= t 'reservations.name'
-      td= t 'reservations.lot'
-      td &nbsp;
-  tbody
-    -@reservations.each do |reservation|
+.table-responsive
+  table.table.table-striped
+    thead
       tr
-        td = link_to(reservation.id, '#')
-        td = reservation.start_date
-        td = reservation.end_date
-        td
-          = link_to(reservation.camper.full_name, '#')
-        td = link_to(reservation.lot.number, '#')
-        td
-          = link_to('Show', '#', class: 'btn btn-xs btn-default')
-          '
-          = link_to('Check In', '#', class: 'btn btn-xs btn-success')
+        th= t 'reservations.reservation_number'
+        th= t 'reservations.start_date'
+        th= t 'reservations.end_date'
+        th= t 'reservations.name'
+        th= t 'reservations.lot'
+        th &nbsp;
+    tbody
+      -@reservations.each do |reservation|
+        tr
+          td = link_to(reservation.id, '#')
+          td = reservation.start_date
+          td = reservation.end_date
+          td
+            = link_to(reservation.camper.full_name, '#')
+          td
+            = link_to(reservation.lot.number, '#')
+          td
+            = link_to('Show', '#', class: 'btn btn-xs btn-default')
+            '
+            = link_to('Check In', '#', class: 'btn btn-xs btn-success')

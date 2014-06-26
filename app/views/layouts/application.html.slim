@@ -13,17 +13,25 @@ html lang="en"
       | <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       | <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
-
     = csrf_meta_tags
   body
+    / Navigation Area
     = render 'shared/nav'
+
+    / Main Content Area
     .container
       .row
-        = render 'shared/flashes'
-        = yield
+        .col-md-12
+          = render 'shared/flashes'
+          = yield
 
+    / Footer Container
+    .container-fluid
       .row
-        #footer.text-muted.small
-          ' &copy #{copyright_years(2013)}. Crafted By
-          a.text-muted> href="http://www.sevenview.ca"  Sevenview Studios
-          ' in Springdale, NL
+        .col-md-12
+          #footer.text-muted.small
+            ' &copy #{copyright_years(2013)}. Crafted By
+            a> href="http://www.sevenview.ca"  Sevenview Studios
+            ' in Springdale, NL
+
+    = javascript_include_tag "application"
