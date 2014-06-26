@@ -13,7 +13,7 @@ class ReservationsController < ApplicationController
     data_for_dropdowns
 
     if @reservation.save
-      flash.notice = t('reservations.created_message')
+      flash[:success] = t('reservations.created_message')
       redirect_to reservations_path
     else
       render :new
