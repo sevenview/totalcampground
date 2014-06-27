@@ -4,7 +4,8 @@ table a.btn, .table a.btn {
 }
 
 // ERRORS
-.error-messages {
+// #error_explanation is used by Devise
+.error-messages, #error_explanation {
   @extend .alert;
   @extend .alert-danger;
   h2 {
