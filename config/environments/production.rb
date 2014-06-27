@@ -82,4 +82,14 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.default_url_options = { host: 'catamaran.totalcampground.com' }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    user_name: ENV['MANDRILL_USERNAME'] ,
+    password: ENV['MANDRILL_APIKEY'],
+    address: 'smtp.mandrillapp.com',
+    domain: 'heroku.com',
+    port: '587',
+    authentication: :plain
+  }
 end

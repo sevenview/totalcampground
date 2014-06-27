@@ -45,3 +45,8 @@ Staging server. Username and password are stored in environment variables:
 
 Deployment
 ----------
+
+We deploy to Heroku.
+
+### Addons
+* [Mandrill](https://addons.heroku.com/mandrill) for email delivery.
