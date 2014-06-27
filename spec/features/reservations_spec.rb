@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 feature 'Reservations', type: :feature do
+  let(:user) { FactoryGirl.create(:user) }
+
+  background do
+    sign_in user
+  end
+
   scenario 'Views the list of reservations' do
     reservation = FactoryGirl.create(:reservation)
     visit reservations_path
