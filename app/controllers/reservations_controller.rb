@@ -20,12 +20,15 @@ class ReservationsController < ApplicationController
     end
   end
 
+  def edit
+    @reservation = Reservation.find(params[:id])
+  end
+
   def check_in
     reservation = Reservation.find(params[:id])
     reservation.checked_in = true
     reservation.save
     redirect_to reservations_path
-    else
   end
 
   private
