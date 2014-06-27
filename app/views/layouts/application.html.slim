@@ -4,7 +4,7 @@ html lang="en"
     meta charset="utf-8"
     meta http-equiv="X-UA-Compatible" content="IE=edge"
     meta name="viewport" content="width=device-width, initial-scale=1"
-    title= "#{Rails.application.config.app_name} (#{Rails.application.config.app_version})"
+    title= "#{Rails.application.config.app_name}"
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     link href="//maxcdn.bootstrapcdn.com/bootswatch/3.1.1/flatly/bootstrap.min.css" rel="stylesheet"
 
@@ -28,11 +28,15 @@ html lang="en"
 
     / Footer Container
     .container-fluid
-      .row
-        .col-md-12
-          #footer.text-muted.small
-            ' &copy #{copyright_years(2013)}. Crafted By
-            a> href="http://www.sevenview.ca"  Sevenview Studios
-            ' in Springdale, NL
+      #footer
+        .row
+          .col-md-12
+            span.small.text-muted
+              ' &copy #{copyright_years(2013)}
+              em>
+                = "(Version #{Rails.application.config.app_version})."
+              ' Crafted By
+              a> href="http://www.sevenview.ca"  Sevenview Studios
+              ' in Springdale, NL.
 
     = javascript_include_tag 'last'
