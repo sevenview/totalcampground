@@ -16,10 +16,16 @@ Dependencies
 
 Development Setup
 -----------------
-* In addion to seeding your database with the standard `rake db:seed`, you can
+In addition to seeding your database with the standard `rake db:seed`, you can
 also load in a set of sample data with `rake db:sample_data`.
 
+To test email delivery install [Mailcatcher](https://github.com/sj26/mailcatcher)
 
+```
+$ gem install mailcatcher
+$ mailcatcher
+$ open http://localhost:1080
+```
 Configuration
 -------------
 * Copy config/database.yml.dist to config/database.yml and customize
@@ -30,6 +36,7 @@ username / password to create a sample admin user.
 
 * SAMPLE_ADMIN_EMAIL
 * SAMPLE_ADMIN_PASSWORD
+
 
 Deployment
 ----------
