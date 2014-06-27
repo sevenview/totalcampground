@@ -4,10 +4,10 @@
     = form.collection_select :camper_id, @campers, :id, :full_name, {}, {class: 'form-control'}
 
     = form.label :start_date, 'Arrive'
-    = form.text_field :start_date, class: 'form-control'
+    = form.text_field :start_date, class: 'form-control', data: { behaviour: 'datepicker' }
 
     = form.label :end_date, 'Depart'
-    = form.text_field :end_date, class: 'form-control'
+    = form.text_field :end_date, class: 'form-control', data: { behaviour: 'datepicker' }
 
     = form.label :lot
     = form.collection_select :lot_id, @lots, :id, :name, {}, {class: 'form-control'}
