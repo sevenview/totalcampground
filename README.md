@@ -3,6 +3,9 @@ Total Campground
 
 Introduction
 ------------
+This is a Ruby on Rails based web application for managing a campground.
+This currently 'works for us' and is branded for our company use. Use at you
+own discretion.
 
 Dependencies
 ------------
