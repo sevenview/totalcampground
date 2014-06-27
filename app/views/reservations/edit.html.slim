@@ -5,3 +5,5 @@ h1 Reservation #{@reservation.id}
 = form_for @reservation, html: {role: 'form'} do |form|
   = render form
   = form.submit 'Update Reservation', class: 'btn btn-primary'
+  | &nbsp;or&nbsp;
+  = link_to('Cancel', :back)
