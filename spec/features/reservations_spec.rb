@@ -34,4 +34,23 @@ feature 'Reservations', type: :feature do
     click_button 'Create Reservation'
     expect(page).to have_content('errors')
   end
+
+  scenario 'Camper shows as checked in on master list' do
+    FactoryGirl.create(:reservation, checked_in: true)
+    visit reservations_path
+    expect(page).to have_content('Checked In')
+  end
+
+  scenario 'Camper does not show as checked in on master list' do
+    FactoryGirl.create(:reservation, checked_in: false)
+    visit reservations_path
+    expect(page).to have_no_content('Checked In')
+  end
+
+  scenario 'User checks in from the master list of reservations' do
+    FactoryGirl.create(:reservation, checked_in: false)
+    visit reservations_path
+    click_link('Check In')
+    expect(page).to have_content('Checked In')
+  end
 end

@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   root to: 'reservations#index'
 
-  resources :reservations
+  resources :reservations do
+    member do
+      get 'check_in'
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

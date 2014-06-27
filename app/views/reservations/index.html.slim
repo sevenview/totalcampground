@@ -9,18 +9,21 @@ h1= t 'reservations.reservations'
         th= t 'reservations.end_date'
         th= t 'reservations.name'
         th= t 'reservations.lot'
+        th= t 'reservations.status'
         th &nbsp;
     tbody
-      -@reservations.each do |reservation|
+      - @reservations.each do |reservation|
         tr
           td = link_to(reservation.id, '#')
           td = reservation.start_date
           td = reservation.end_date
+          td = link_to(reservation.camper.full_name, '#')
+          td = link_to(reservation.lot.number, '#')
           td
-            = link_to(reservation.camper.full_name, '#')
+            - if reservation.checked_in?
+              span.label.label-info Checked In
           td
-            = link_to(reservation.lot.number, '#')
-          td
-            = link_to('Show', '#', class: 'btn btn-xs btn-default')
-            '
-            = link_to('Check In', '#', class: 'btn btn-xs btn-success')
+            - if reservation.checked_in?
+              = link_to('Check Out', '#', class: 'btn btn-xs btn-default')
+            - else
+              = link_to('Check In', check_in_reservation_path(reservation), class: 'btn btn-xs btn-info')

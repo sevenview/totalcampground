@@ -5,12 +5,12 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
-    data_for_dropdowns
+    load_data_for_dropdowns
   end
 
   def create
     @reservation = Reservation.new(reservation_params)
-    data_for_dropdowns
+    load_data_for_dropdowns
 
     if @reservation.save
       flash[:success] = t('reservations.created_message')
@@ -18,6 +18,14 @@ class ReservationsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def check_in
+    reservation = Reservation.find(params[:id])
+    reservation.checked_in = true
+    reservation.save
+    redirect_to reservations_path
+    else
   end
 
   private
@@ -29,7 +37,7 @@ class ReservationsController < ApplicationController
     )
   end
 
-  def data_for_dropdowns
+  def load_data_for_dropdowns
     @campers = Camper.all.order(:last_name, :first_name)
     @lots = Lot.all.order(:number)
   end
