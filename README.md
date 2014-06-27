@@ -37,6 +37,11 @@ username / password to create a sample admin user.
 * SAMPLE_ADMIN_EMAIL
 * SAMPLE_ADMIN_PASSWORD
 
+We're using [Mailtrap.io](http://mailtrap.io) to deliver test emails on the
+Staging server. Username and password are stored in environment variables:
+
+* MAILTRAP_USER_NAME
+* MAILTRAP_PASSWORD
 
 Deployment
 ----------

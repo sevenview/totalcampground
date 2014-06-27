@@ -82,4 +82,15 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.default_url_options = { host: 'staging.totalcampground.com' }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    user_name: ENV['MAILTRAP_USER_NAME'] ,
+    password: ENV['MAILTRAP_PASSWORD'],
+    address: 'mailtrap.io',
+    domain: 'mailtrap.io',
+    port: '2525',
+    authentication: :cram_md5,
+    enable_starttls_auto: true
+  }
 end
