@@ -1,9 +1,13 @@
-#footer {
-  margin: 30px 0;
-  padding-top: 10px;
-  border-top: 1px solid $gray-lighter;
-}
-
+// TABLES
 table a.btn, .table a.btn {
   text-decoration: none;
+}
+
+// ERRORS
+.error-messages {
+  @extend .alert;
+  @extend .alert-danger;
+  h2 {
+    margin-top: 0;
+  }
 }
