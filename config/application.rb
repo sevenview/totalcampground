@@ -35,7 +35,7 @@ module TotalCampground
     end
 
     # Custom settings
-    config.app_name = "Total Campground"
-    config.app_version = "0.0.1"
+    config.app_name = 'Total Campground'
+    config.app_version = '0.0.1'
   end
 end
