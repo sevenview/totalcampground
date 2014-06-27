@@ -1,8 +1,8 @@
-h1 New Reservation
+h1 Reservation #{@reservation.id}
 
 = error_messages_for @reservation
 
 = form_for @reservation, html: {role: 'form'} do |form|
   = render form
   p
-  = form.submit 'Create Reservation', class: 'btn btn-primary'
+  = form.submit 'Update Reservation', class: 'btn btn-primary'

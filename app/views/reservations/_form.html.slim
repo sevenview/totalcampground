@@ -1,0 +1,28 @@
+.row
+  .col-md-12
+    = form.label :camper
+    = form.collection_select :camper_id, @campers, :id, :full_name, {}, {class: 'form-control'}
+
+    = form.label :start_date, 'Arrive'
+    = form.text_field :start_date, class: 'form-control'
+
+    = form.label :end_date, 'Depart'
+    = form.text_field :end_date, class: 'form-control'
+
+    = form.label :lot
+    = form.collection_select :lot_id, @lots, :id, :name, {}, {class: 'form-control'}
+
+    = form.label :adults
+    = form.text_field :adults, class: 'form-control'
+
+    = form.label :children
+    = form.text_field :children, class: 'form-control'
+
+    = form.label :pets
+    = form.text_field :pets, class: 'form-control'
+
+    = form.label :notes
+    = form.text_area :notes, class: 'form-control'
+
+    => form.label :checked_in
+    = form.check_box :checked_in

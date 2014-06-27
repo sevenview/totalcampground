@@ -53,4 +53,29 @@ feature 'Reservations', type: :feature do
     click_link('Check In')
     expect(page).to have_content('Checked In')
   end
+
+  scenario 'User views reservation details' do
+    reservation = FactoryGirl.create(:reservation)
+    visit reservations_path
+    click_link reservation.id
+    expect(page).to have_content "Reservation #{reservation.id}"
+  end
+
+  scenario 'User updates a reservation' do
+    reservation = FactoryGirl.create(:reservation)
+    visit reservations_path
+    click_link reservation.id
+    fill_in 'Adults', with: '2'
+    click_button 'Update Reservation'
+    expect(page).to have_content("Updated reservation ##{reservation.id}")
+  end
+
+  scenario 'User updates a reservation with invalid data' do
+    reservation = FactoryGirl.create(:reservation)
+    visit reservations_path
+    click_link reservation.id
+    fill_in 'Arrive', with: nil
+    click_button 'Update Reservation'
+    expect(page).to have_content('1 error')
+  end
 end

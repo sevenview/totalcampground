@@ -14,7 +14,7 @@ h1= t 'reservations.reservations'
     tbody
       - @reservations.each do |reservation|
         tr
-          td = link_to(reservation.id, '#')
+          td = link_to(reservation.id, edit_reservation_path(reservation))
           td = reservation.start_date
           td = reservation.end_date
           td = link_to(reservation.camper.full_name, '#')

@@ -1,16 +1,16 @@
 class ReservationsController < ApplicationController
+  before_action :load_data_for_dropdowns, only: [:new, :create, :edit, :update]
+
   def index
     @reservations = Reservation.all.order(start_date: :asc)
   end
 
   def new
     @reservation = Reservation.new
-    load_data_for_dropdowns
   end
 
   def create
     @reservation = Reservation.new(reservation_params)
-    load_data_for_dropdowns
 
     if @reservation.save
       flash[:success] = t('reservations.created_message')
@@ -22,6 +22,17 @@ class ReservationsController < ApplicationController
 
   def edit
     @reservation = Reservation.find(params[:id])
+  end
+
+  def update
+    @reservation = Reservation.find(params[:id])
+    @reservation.update_attributes(reservation_params)
+    if @reservation.save
+      flash[:success] = "Updated reservation ##{@reservation.id}"
+      redirect_to reservations_path
+    else
+      render :edit
+    end
   end
 
   def check_in
