@@ -25,5 +25,11 @@ Configuration
 * Copy config/database.yml.dist to config/database.yml and customize
 * Configure SECRET_KEY_BASE environment variable
 
+If you're using the `db:sample_data` task, you'll want to store your admin
+username / password to create a sample admin user.
+
+* SAMPLE_ADMIN_EMAIL
+* SAMPLE_ADMIN_PASSWORD
+
 Deployment
 ----------

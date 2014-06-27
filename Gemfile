@@ -21,6 +21,10 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
+# Dotenv to load .env variables. Load early before any gems that depend
+# on variables
+gem 'dotenv-rails', groups: [:development, :test]
+
 group :development do
   gem 'spring'
   gem 'lol_dba' # Find missing indexes with rake db:find_indexes
@@ -66,3 +70,6 @@ gem 'bootstrap-datepicker-rails'
 
 # Slim templating instead of default ERB
 gem 'slim-rails'
+
+# Devise for authentication
+gem 'devise', '~> 3.2.0'

@@ -22,16 +22,16 @@ default: &default
   pool: 5
   username:
   password:
-  
+
 development:
   <<: *default
-  database: opencampground_development
+  database: totalcampground_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: opencampground
+  #username: totalcampground
 
   # The password associated with the postgres role (username).
   #password:
@@ -59,7 +59,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: opencampground_test
+  database: totalcampground_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -82,6 +82,6 @@ test:
 #
 production:
   <<: *default
-  database: opencampground_production
-  username: opencampground
-  password: <%= ENV['OPENCAMPGROUND_DATABASE_PASSWORD'] %>
+  database: totalcampground_production
+  username: totalcampground
+  password: <%= ENV['TOTALCAMPGROUND_DATABASE_PASSWORD'] %>

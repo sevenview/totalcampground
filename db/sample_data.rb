@@ -17,7 +17,7 @@ Reservation.delete_all
   # Pull out a random camper and lot
   camper = Camper.offset(rand(Camper.count)).first
   lot    = Lot.offset(rand(Lot.count)).first
-  Reservation.create(
+  Reservation.create!(
     start_date: start_date,
     end_date:   end_date,
     adults:     rand(1..10),
@@ -26,3 +26,8 @@ Reservation.delete_all
     checked_in: [true, false].sample
   )
 end
+
+# Users
+puts 'Users...'
+User.delete_all
+User.create!(email: ENV['SAMPLE_ADMIN_EMAIL'], password: ENV['SAMPLE_ADMIN_PASSWORD'])
