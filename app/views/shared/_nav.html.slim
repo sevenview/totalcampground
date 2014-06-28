@@ -14,9 +14,16 @@ nav.navbar.navbar-default.navbar-static-top role="navigation"
         - if user_signed_in?
           li = link_to 'Reservation List', reservations_path
           li = link_to 'In Park List', '#'
-          li = link_to 'New Reservation', new_reservation_path
       ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
           li = link_to 'Log Out', destroy_user_session_path, method: :delete
         - else
           li = link_to 'Log In', new_user_session_path
+
+/ Show the New Reservation button unless we're on the New Reservation form
+- unless current_page?(new_reservation_path)
+  .container
+    .pull-right
+      = link_to new_reservation_path, class: 'btn btn-primary' do
+        span.glyphicon.glyphicon-plus>
+        | New Reservation
