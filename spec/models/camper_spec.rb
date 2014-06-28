@@ -18,10 +18,18 @@ describe Camper, type: :model do
   end
 
   describe '#full_name' do
-    it "returns the camper's first and last name concatenated" do
+    it 'returns the camper first and last name concatenated' do
       camper.first_name = 'John'
       camper.last_name  = 'Doe'
       expect(camper.full_name).to eq('John Doe')
+    end
+  end
+
+  describe '#full_name_last_first' do
+    it 'returns the camper full name - last name first separate by comma' do
+      camper.first_name = 'John'
+      camper.last_name  = 'Doe'
+      expect(camper.full_name_last_first).to eq('Doe, John')
     end
   end
 end

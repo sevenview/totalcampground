@@ -1,0 +1,19 @@
+h1 Campers
+
+.table-responsive
+  table.table.table-striped
+    thead
+      tr
+        th Name
+        th Province
+        th Country
+        th Phone
+        th Mobile
+    tbody
+      - @campers.each do |camper|
+        tr
+          td = link_to camper.full_name_last_first, camper
+          td = camper.province
+          td = camper.country
+          td = camper.phone
+          td = camper.mobile
