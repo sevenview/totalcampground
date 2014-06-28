@@ -12,11 +12,21 @@
   .col-md-6
     .form-group
       = form.label :start_date, 'Arrive'
-      = form.text_field :start_date, class: 'form-control', data: { behaviour: 'datepicker' }
+      .input-group
+        = form.text_field(:start_date, class: 'form-control',
+                          data: { behaviour: 'datepicker' },
+                          placeholder: 'yyyy/mm/dd')
+        span.input-group-addon
+          span.glyphicon.glyphicon-th
   .col-md-6
     .form-group
       = form.label :end_date, 'Depart'
-      = form.text_field :end_date, class: 'form-control', data: { behaviour: 'datepicker' }
+      .input-group
+        = form.text_field(:end_date, class: 'form-control',
+                          data: { behaviour: 'datepicker' },
+                          placeholder: 'yyyy/mm/dd')
+        span.input-group-addon
+          span.glyphicon.glyphicon-th
 
 .row
   .col-md-4
