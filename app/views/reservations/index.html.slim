@@ -21,7 +21,7 @@ h1= t 'reservations.reservations'
           td = link_to(reservation.lot.number, '#')
           td
             - if reservation.checked_in?
-              span.label.label-info Checked In
+              span.label.label-primary Checked In
           td
             - if reservation.checked_in?
               = link_to('Check Out', '#', class: 'btn btn-xs btn-default')
