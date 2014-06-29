@@ -25,6 +25,7 @@ nav.navbar.navbar-default.navbar-static-top role="navigation"
 - unless current_page?(new_reservation_path)
   .container
     .pull-right
-      = link_to new_reservation_path, class: 'btn btn-success' do
-        span.glyphicon.glyphicon-plus>
-        | New Reservation
+      p
+        = link_to new_reservation_path, class: 'btn btn-success' do
+          span.glyphicon.glyphicon-plus>
+          | New Reservation

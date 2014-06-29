@@ -6,7 +6,7 @@ class Camper < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
 
-  def full_name_last_first
+  def full_name_last_name_first
     "#{last_name}, #{first_name}"
   end
 

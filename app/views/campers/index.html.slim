@@ -15,7 +15,7 @@ p
     tbody
       - @campers.each do |camper|
         tr
-          td = link_to camper.full_name_last_first, camper
+          td = link_to camper.full_name_last_name_first, edit_camper_path(camper)
           td = camper.province
           td = camper.country
           td = camper.phone

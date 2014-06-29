@@ -31,11 +31,11 @@ describe Camper, type: :model do
     end
   end
 
-  describe '#full_name_last_first' do
+  describe '#full_name_last_name_first' do
     it 'returns the camper full name - last name first separate by comma' do
       camper.first_name = 'John'
       camper.last_name  = 'Doe'
-      expect(camper.full_name_last_first).to eq('Doe, John')
+      expect(camper.full_name_last_name_first).to eq('Doe, John')
     end
   end
 end

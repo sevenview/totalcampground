@@ -17,6 +17,21 @@ class CampersController < ApplicationController
     end
   end
 
+  def edit
+    @camper = Camper.find(params[:id])
+  end
+
+  def update
+    @camper = Camper.find(params[:id])
+    @camper.update_attributes(camper_params)
+    if @camper.save
+      flash[:success] = "Updated camper #{@camper.full_name}"
+      redirect_to campers_path
+    else
+      render :edit
+    end
+  end
+
   private
 
   def camper_params
