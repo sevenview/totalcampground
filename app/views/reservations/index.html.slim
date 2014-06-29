@@ -17,13 +17,13 @@ h1= t 'reservations.reservations'
           td = link_to(reservation.id, edit_reservation_path(reservation))
           td = reservation.start_date
           td = reservation.end_date
-          td = link_to(reservation.camper.full_name, '#')
+          td = link_to(reservation.camper.full_name, edit_camper_path(reservation.camper))
           td = link_to(reservation.lot.number, '#')
           td
             - if reservation.checked_in?
               span.label.label-primary Checked In
           td
             - if reservation.checked_in?
-              = link_to('Check Out', '#', class: 'btn btn-xs btn-default')
+              = link_to('Check Out', edit_reservation_path(reservation), class: 'btn btn-xs btn-default')
             - else
               = link_to('Check In', check_in_reservation_path(reservation), class: 'btn btn-xs btn-info')
