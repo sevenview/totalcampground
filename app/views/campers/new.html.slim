@@ -1,0 +1,10 @@
+h1 New Camper
+
+= error_messages_for @camper
+
+= form_for @camper, html: { role: 'form' } do |form|
+  = render form
+
+  => form.submit 'Create Camper', class: 'btn btn-primary'
+  ' or
+  = link_to 'Cancel', :back
