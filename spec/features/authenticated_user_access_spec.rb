@@ -12,6 +12,6 @@ feature 'Authenticated user' do
 
   scenario 'sees authenticated user menu items' do
     expect(page).to have_content('Log Out')
-    expect(page).to have_content('Reservation List')
+    expect(page).to have_content('Reservations')
   end
 end
