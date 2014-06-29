@@ -40,4 +40,7 @@ Rails.application.configure do
   # Mailtrap.io for email
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = { address: 'localhost', port: 1025 }
+
+  # Raises an error on unpermitted attributes assignment
+  config.action_controller.action_on_unpermitted_parameters = :raise
 end
