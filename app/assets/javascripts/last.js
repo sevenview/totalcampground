@@ -2,4 +2,4 @@
 // i.e. before the closing </body> tag
 
 //= require bootstrap
-//= require bootstrap-datepicker
+//= require bootstrap-datepicker/core
