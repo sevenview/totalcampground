@@ -8,13 +8,19 @@ describe Camper, type: :model do
 
   it 'requires either a phone or mobile number' do
     camper.phone = nil
+    camper.mobile = nil
     camper.valid?
     expect(camper.errors[:base].size).to eq(1)
 
     camper.phone = '7097097090'
     camper.mobile = nil
     camper.valid?
-    expect(camper.errors[:base].size).to eq(1)
+    expect(camper.errors).to be_empty
+
+    camper.phone = nil
+    camper.mobile = '7097097090'
+    camper.valid?
+    expect(camper.errors).to be_empty
   end
 
   describe '#full_name' do
