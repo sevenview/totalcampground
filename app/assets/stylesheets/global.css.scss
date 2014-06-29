@@ -7,7 +7,7 @@ table a.btn, .table a.btn {
 // #error_explanation is used by Devise
 .error-messages, #error_explanation {
   @extend .alert;
-  @extend .alert-danger;
+  @extend .alert-warning;
   h2 {
     margin-top: 0;
   }
