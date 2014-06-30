@@ -11,6 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+// NOTE: Ensure jquery.turbolinks loads immediately after jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
+//= require bootstrap
+//= require bootstrap-datepicker/core
 //= require global
+//= require turbolinks
