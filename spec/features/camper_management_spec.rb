@@ -30,9 +30,6 @@ feature 'Camper Management', type: :feature do
     expect(page).to have_content('errors')
   end
 
-  scenario 'User can delete a camper'
-  scenario 'Deleting a camper does not affect any associated reservations'
-
   scenario 'User can update a camper' do
     camper = FactoryGirl.create(:camper)
     visit campers_path

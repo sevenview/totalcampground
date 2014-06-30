@@ -37,6 +37,6 @@ class CampersController < ApplicationController
   def camper_params
     params.require(:camper).permit(:first_name, :last_name, :address, :city,
                                    :province, :postal_code, :country, :phone,
-                                   :mobile, :email, :notes)
+                                   :mobile, :email, :notes, :active)
   end
 end
