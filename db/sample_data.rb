@@ -42,4 +42,12 @@ Street.create!(name: 'Tenter\'s Delight')
 # Lots
 puts 'Lots...'
 Lot.delete_all
-FactoryGirl.create_list(:lot, 250)
+# random number of lots on each street
+Street.all.each do |street|
+  rand(40).times do |n|
+    Lot.create!(
+      number: n + 1,
+      street: street
+    )
+  end
+end
