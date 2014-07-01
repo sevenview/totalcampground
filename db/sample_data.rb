@@ -3,11 +3,6 @@ puts 'Campers...'
 Camper.delete_all
 FactoryGirl.create_list(:camper, 30)
 
-# Lots
-puts 'Lots...'
- Lot.delete_all
-FactoryGirl.create_list(:lot, 250)
-
 # Reservations
 puts 'Reservations...'
 Reservation.delete_all
@@ -31,3 +26,20 @@ end
 puts 'Users...'
 User.delete_all
 User.create!(email: ENV['SAMPLE_ADMIN_EMAIL'], password: ENV['SAMPLE_ADMIN_PASSWORD'])
+
+# Streets
+puts 'Streets...'
+Street.delete_all
+Street.create!(name: 'Cat St. West')
+Street.create!(name: 'Cat St. East')
+Street.create!(name: 'Sunset Drive')
+Street.create!(name: 'Lakeside Drive')
+Street.create!(name: 'Starview Drive')
+Street.create!(name: 'Pondside Drive')
+Street.create!(name: 'Paradise Point')
+Street.create!(name: 'Tenter\'s Delight')
+
+# Lots
+puts 'Lots...'
+Lot.delete_all
+FactoryGirl.create_list(:lot, 250)
