@@ -25,7 +25,7 @@ feature 'Reservations', type: :feature do
     fill_in 'Adults', with: '2'
     fill_in 'Children', with: '3'
     fill_in 'Pets', with: '1'
-    select lot.name, from: 'reservation_lot_id'
+    select lot.number, from: 'reservation_lot_id'
     fill_in 'Note', with: Faker::Lorem.sentence
     check 'reservation_checked_in'
     click_button 'Create Reservation'

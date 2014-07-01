@@ -1,3 +1,3 @@
 class Lot < ActiveRecord::Base
-  validates :name, :number, presence: true
+  validates :number, presence: true
 end
