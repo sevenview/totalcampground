@@ -18,7 +18,7 @@ h1= t 'reservations.reservations'
           td = reservation.start_date
           td = reservation.end_date
           td = link_to(reservation.camper.full_name, edit_camper_path(reservation.camper))
-          td = link_to(reservation.lot.number, '#')
+          td = link_to(reservation.lot.number_and_street, '#')
           td
             - if reservation.checked_in?
               span.label.label-primary Checked In

@@ -6,7 +6,8 @@
   .col-md-6
     .form-group
       = form.label :lot
-      = form.collection_select :lot_id, @lots, :id, :number, {}, {class: 'form-control'}
+      = form.grouped_collection_select(:lot_id, @streets, :lots, :name, :id, :number_and_street,
+                                       { include_blank: true }, { class: 'form-control'} )
 
 .row
   .col-md-6

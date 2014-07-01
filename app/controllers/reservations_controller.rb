@@ -53,6 +53,7 @@ class ReservationsController < ApplicationController
 
   def load_data_for_dropdowns
     @campers = Camper.all.order(:last_name, :first_name)
-    @lots = Lot.all.order(:number)
+    # @lots = Lot.all.order(:number)
+    @streets = Street.all
   end
 end

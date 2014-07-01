@@ -5,4 +5,11 @@ RSpec.describe Lot, type: :model do
 
   it { is_expected.to validate_presence_of(:number) }
   it { is_expected.to belong_to(:street) }
+
+  describe '.number_and_street' do
+    it 'returns the lot number and street name' do
+      lot = FactoryGirl.create(:lot)
+      expect(lot.number_and_street).to eq("#{lot.number} #{lot.street.name}")
+    end
+  end
 end
