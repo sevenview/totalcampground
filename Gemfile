@@ -32,7 +32,11 @@ group :development do
   gem 'guard-rspec'
   gem 'guard-migrate'
   gem 'guard-bundler'
-  gem 'foreman', require: false
+  gem 'foreman', require: false # we just want this one available at cmd line
+
+  # give us more informative errors in dev
+  gem 'better_errors'
+  gem 'binding_of_caller' # provides REPL with better_errors
 end
 
 group :test do
