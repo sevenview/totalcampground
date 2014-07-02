@@ -1,3 +1,24 @@
+# == Schema Information
+#
+# Table name: campers
+#
+#  id          :integer          not null, primary key
+#  last_name   :string(255)
+#  first_name  :string(255)
+#  address     :string(255)
+#  city        :string(255)
+#  province    :string(255)
+#  postal_code :string(255)
+#  phone       :string(255)
+#  mobile      :string(255)
+#  email       :string(255)
+#  country     :string(255)
+#  notes       :text
+#  created_at  :datetime
+#  updated_at  :datetime
+#  active      :boolean          default(TRUE)
+#
+
 require 'rails_helper'
 
 describe Camper, type: :model do

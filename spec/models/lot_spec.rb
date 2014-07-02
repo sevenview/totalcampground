@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: lots
+#
+#  id         :integer          not null, primary key
+#  number     :integer
+#  created_at :datetime
+#  updated_at :datetime
+#  street_id  :integer
+#
+
 require 'rails_helper'
 
 RSpec.describe Lot, type: :model do

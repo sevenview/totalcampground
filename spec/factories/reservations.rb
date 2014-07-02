@@ -1,3 +1,21 @@
+# == Schema Information
+#
+# Table name: reservations
+#
+#  id         :integer          not null, primary key
+#  start_date :date
+#  end_date   :date
+#  notes      :text
+#  checked_in :boolean          default(FALSE)
+#  adults     :integer
+#  children   :integer
+#  pets       :integer
+#  created_at :datetime
+#  updated_at :datetime
+#  camper_id  :integer
+#  lot_id     :integer
+#
+
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
