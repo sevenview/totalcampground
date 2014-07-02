@@ -15,6 +15,6 @@ class Lot < ActiveRecord::Base
   belongs_to :street
 
   def number_and_street
-    "#{self.number} #{self.street.name}"
+    "#{number} #{street.name}"
   end
 end
