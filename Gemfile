@@ -88,3 +88,6 @@ gem 'jquery-turbolinks'
 # Kaminari for pagination
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
+
+# Encrypt column data
+gem 'attr_encrypted'

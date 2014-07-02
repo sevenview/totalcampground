@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140702184306) do
+ActiveRecord::Schema.define(version: 20140702185912) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20140702184306) do
     t.date     "start_date"
     t.date     "end_date"
     t.text     "notes"
-    t.boolean  "checked_in",           default: false
+    t.boolean  "checked_in",                   default: false
     t.integer  "adults"
     t.integer  "children"
     t.integer  "pets"
@@ -55,6 +55,9 @@ ActiveRecord::Schema.define(version: 20140702184306) do
     t.integer  "camper_id"
     t.integer  "lot_id"
     t.integer  "security_card_number"
+    t.string   "encrypted_credit_card_number"
+    t.integer  "credit_card_expiry_month"
+    t.integer  "credit_card_expiry_year"
   end
 
   add_index "reservations", ["camper_id"], name: "index_reservations_on_camper_id", using: :btree

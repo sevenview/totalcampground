@@ -49,6 +49,22 @@
       = form.text_field :security_card_number, class: 'form-control'
 
 .row
+  .col-md-8
+    .form-group
+      = form.label :credit_card_number
+      = form.text_field :credit_card_number, class: 'form-control'
+  .col-md-2
+    .form-group
+      = form.label :credit_card_expiry_month, 'Expiry month'
+      = form.text_field :credit_card_expiry_month, class: 'form-control',
+                        placeholder: 'MM'
+  .col-md-2
+    .form-group
+      = form.label :credit_card_expiry_year, 'Expiry year'
+      = form.text_field :credit_card_expiry_year, class: 'form-control',
+                        placeholder: 'YYYY'
+
+.row
   .col-md-12
     .form-group
       = form.label :notes

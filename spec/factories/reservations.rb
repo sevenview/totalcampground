@@ -2,19 +2,22 @@
 #
 # Table name: reservations
 #
-#  id                   :integer          not null, primary key
-#  start_date           :date
-#  end_date             :date
-#  notes                :text
-#  checked_in           :boolean          default(FALSE)
-#  adults               :integer
-#  children             :integer
-#  pets                 :integer
-#  created_at           :datetime
-#  updated_at           :datetime
-#  camper_id            :integer
-#  lot_id               :integer
-#  security_card_number :integer
+#  id                           :integer          not null, primary key
+#  start_date                   :date
+#  end_date                     :date
+#  notes                        :text
+#  checked_in                   :boolean          default(FALSE)
+#  adults                       :integer
+#  children                     :integer
+#  pets                         :integer
+#  created_at                   :datetime
+#  updated_at                   :datetime
+#  camper_id                    :integer
+#  lot_id                       :integer
+#  security_card_number         :integer
+#  encrypted_credit_card_number :string(255)
+#  credit_card_expiry_month     :integer
+#  credit_card_expiry_year      :integer
 #
 # Indexes
 #

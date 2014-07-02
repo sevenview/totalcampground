@@ -43,6 +43,10 @@ Staging server. Username and password are stored in environment variables:
 * `MAILTRAP_USER_NAME`
 * `MAILTRAP_PASSWORD`
 
+In order to encrypt database columns, you need to set
+
+* `DB_ENCRYPTION_KEY`
+
 Deployment
 ----------
 
