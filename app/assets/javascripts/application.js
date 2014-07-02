@@ -18,3 +18,4 @@
 //= require bootstrap-datepicker/core
 //= require global
 //= require turbolinks
+//= require autofocus_fix
