@@ -56,13 +56,13 @@
   .col-md-2
     .form-group
       = form.label :credit_card_expiry_month, 'Expiry month'
-      = form.text_field :credit_card_expiry_month, class: 'form-control',
-                        placeholder: 'MM'
+      = form.select :credit_card_expiry_month, 1..12, { include_blank: true },
+                    class: 'form-control'
   .col-md-2
     .form-group
       = form.label :credit_card_expiry_year, 'Expiry year'
-      = form.text_field :credit_card_expiry_year, class: 'form-control',
-                        placeholder: 'YYYY'
+      = form.select :credit_card_expiry_year, Date.today.year..10.years.from_now.year,
+                    { include_blank: true }, class: 'form-control'
 
 .row
   .col-md-12
