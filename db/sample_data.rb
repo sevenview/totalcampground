@@ -15,14 +15,18 @@ User.create!(email: ENV['SAMPLE_ADMIN_EMAIL'], password: ENV['SAMPLE_ADMIN_PASSW
 
 # Streets
 puts 'Streets...'
-Street.create!(name: 'Cat St. West')
-Street.create!(name: 'Cat St. East')
+Street.create!(name: 'Catamaran Street West')
+Street.create!(name: 'Catamaran Street East')
 Street.create!(name: 'Sunset Drive')
-Street.create!(name: 'Lakeside Drive')
+Street.create!(name: 'Lakeview Drive')
 Street.create!(name: 'Starview Drive')
 Street.create!(name: 'Pondside Drive')
 Street.create!(name: 'Paradise Point')
 Street.create!(name: 'Tenter\'s Delight')
+Street.create!(name: 'Moonlight Drive')
+Street.create!(name: 'Rainbow Drive')
+Street.create!(name: 'Waterside Lookout')
+
 
 # Lots
 puts 'Lots...'
