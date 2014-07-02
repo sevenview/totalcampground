@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Camper Management', type: :feature do
+feature 'FEATURE: Camper Management', type: :feature do
   background do
     sign_in FactoryGirl.create(:user)
   end

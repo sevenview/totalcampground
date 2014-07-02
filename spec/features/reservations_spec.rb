@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Reservations', type: :feature do
+feature 'FEATURE: Reservations', type: :feature do
   let(:user) { FactoryGirl.create(:user) }
 
   background do
