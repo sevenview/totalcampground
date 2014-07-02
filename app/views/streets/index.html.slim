@@ -1,0 +1,15 @@
+h1 Streets
+
+.row
+  .col-md-4
+    .table-responsive
+      table.table.table-striped
+        thead
+          tr
+            th Name
+            th &nbsp
+        tbody
+          - @streets.each do |street|
+            tr
+              td = street.name
+              td = link_to 'Edit', edit_street_path(street), class: 'btn btn-default btn-xs'

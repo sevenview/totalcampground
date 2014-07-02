@@ -3,16 +3,18 @@ h1 Lots
 p
   = link_to 'New Lot', new_lot_path, class: 'btn btn-primary'
 
-.table-responsive
-  table.table.table-striped
-    thead
-      tr
-        th Number
-        th Street
-        th &nbsp;
-    tbody
-      - @lots.each do |lot|
-        tr
-          td = link_to lot.number, edit_lot_path(lot)
-          td = lot.street.name
-          td = link_to 'Edit', edit_lot_path(lot), class: 'btn btn-default btn-xs'
+.row
+  .col-md-6
+    .table-responsive
+      table.table.table-striped
+        thead
+          tr
+            th Number
+            th Street
+            th &nbsp;
+        tbody
+          - @lots.each do |lot|
+            tr
+              td = link_to lot.number, edit_lot_path(lot)
+              td = lot.street.name
+              td = link_to 'Edit', edit_lot_path(lot), class: 'btn btn-default btn-xs'
