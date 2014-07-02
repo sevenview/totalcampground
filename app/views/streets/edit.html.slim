@@ -1,0 +1,10 @@
+h1 Update Street: #{@street.name}
+
+= error_messages_for @street
+
+= form_for @street, html: { role: 'form' } do |form|
+  = render form
+  .form-group
+    => form.submit 'Update Street', class: 'btn btn-primary'
+    ' or
+    = link_to 'Cancel', streets_path
