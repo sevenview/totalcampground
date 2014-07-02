@@ -54,6 +54,7 @@ puts 'Reservations...'
     adults:     rand(1..10),
     camper:     camper,
     lot:        lot,
-    checked_in: [true, false].sample
+    checked_in: [true, false].sample,
+    security_card_number: rand(100)
   )
 end

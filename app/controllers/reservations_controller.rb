@@ -47,7 +47,8 @@ class ReservationsController < ApplicationController
   def reservation_params
     params.require(:reservation).permit(
       :camper_id, :start_date, :end_date, :lot_id,
-      :adults, :children, :pets, :notes, :checked_in
+      :adults, :children, :pets, :notes, :checked_in,
+      :security_card_number
     )
   end
 

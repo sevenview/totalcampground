@@ -30,18 +30,23 @@
           span.glyphicon.glyphicon-th
 
 .row
-  .col-md-4
+  .col-md-3
     .form-group
       = form.label :adults
       = form.text_field :adults, class: 'form-control'
-  .col-md-4
+  .col-md-3
     .form-group
       = form.label :children
       = form.text_field :children, class: 'form-control'
-  .col-md-4
+  .col-md-3
     .form-group
       = form.label :pets
       = form.text_field :pets, class: 'form-control'
+
+  .col-md-3
+    .form-group
+      = form.label :security_card_number
+      = form.text_field :security_card_number, class: 'form-control'
 
 .row
   .col-md-12
