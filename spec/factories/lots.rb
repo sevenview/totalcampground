@@ -8,6 +8,10 @@
 #  updated_at :datetime
 #  street_id  :integer
 #
+# Indexes
+#
+#  index_lots_on_street_id  (street_id)
+#
 
 FactoryGirl.define do
   factory :lot do

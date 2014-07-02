@@ -8,6 +8,10 @@
 #  updated_at :datetime
 #  street_id  :integer
 #
+# Indexes
+#
+#  index_lots_on_street_id  (street_id)
+#
 
 class Lot < ActiveRecord::Base
   validates :number, presence: true
