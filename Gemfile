@@ -37,6 +37,9 @@ group :development do
   # give us more informative errors in dev
   gem 'better_errors'
   gem 'binding_of_caller' # provides REPL with better_errors
+
+  # Annotate models
+  gem 'annotate', require: false
 end
 
 group :test do
