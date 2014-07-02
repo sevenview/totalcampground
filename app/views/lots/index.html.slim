@@ -1,0 +1,16 @@
+h1 Lots
+
+p
+  = link_to 'New Lot', new_lot_path, class: 'btn btn-primary'
+
+.table-responsive
+  table.table.table-striped.table-bordered
+    thead
+      tr
+        th Number
+        th Street
+    tbody
+      - @lots.each do |lot|
+        tr
+          td = lot.number
+          td = lot.street.name
