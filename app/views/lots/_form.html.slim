@@ -1,0 +1,10 @@
+.row
+  .col-md-4
+    .form-group
+      = form.label :number
+      = form.text_field :number, class: 'form-control'
+.row
+  .col-md-4
+    .form-group
+      = form.label :street
+      = form.collection_select :street_id, @streets, :id, :name, {}, { class: 'form-control' }

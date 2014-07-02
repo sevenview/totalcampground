@@ -33,6 +33,21 @@ feature 'FEATURE: Lot Management', type: :feature do
     expect(page).to have_content('error')
   end
 
-  scenario 'User can edit a lot'
-  scenario 'User can deactivate a lot'
+  scenario 'User can edit a lot' do
+    lot = FactoryGirl.create(:lot, number: 1)
+    visit lots_path
+    click_link lot.number
+    fill_in 'Number', with: '2'
+    click_button 'Update Lot'
+    expect(page).to have_selector('td > a', text: '2')
+  end
+
+  scenario 'User cannot edit a lot with invalid input' do
+    lot = FactoryGirl.create(:lot, number: 1)
+    visit lots_path
+    click_link lot.number
+    fill_in 'Number', with: ''
+    click_button 'Update Lot'
+    expect(page).to have_content('error')
+  end
 end

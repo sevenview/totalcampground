@@ -1,2 +1,9 @@
-h1 Lots#edit
-p Find me in app/views/lots/edit.html.slim
+h1 Edit Lot: #{@lot.number_and_street}
+
+= error_messages_for @lot
+
+= form_for @lot, html: { role: 'form' } do |form|
+  = render form
+  => form.submit 'Update Lot', class: 'btn btn-primary'
+  ' or
+  = link_to 'Cancel', lots_path

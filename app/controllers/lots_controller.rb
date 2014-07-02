@@ -1,5 +1,5 @@
 class LotsController < ApplicationController
-  before_action :load_dropdown_data, only: [:new, :create]
+  before_action :load_dropdown_data, only: [:new, :create, :edit, :update]
 
   def index
     @lots = Lot.all.includes(:street).order('streets.name ASC, number ASC')
@@ -13,6 +13,21 @@ class LotsController < ApplicationController
     @lot = Lot.new(lot_params)
     if @lot.save
       flash[:success] = 'Lot created'
+      redirect_to lots_path
+    else
+      render :new
+    end
+  end
+
+  def edit
+    @lot = Lot.find(params[:id])
+  end
+
+  def update
+    @lot = Lot.find(params[:id])
+    @lot.update_attributes(lot_params)
+    if @lot.save
+      flash[:success] = 'Updated lot'
       redirect_to lots_path
     else
       render :new

@@ -12,6 +12,7 @@ p
         th Country
         th Phone
         th Mobile
+        th &nbsp;
     tbody
       - @campers.each do |camper|
         tr
@@ -20,3 +21,5 @@ p
           td = camper.country
           td = camper.phone
           td = camper.mobile
+          td
+            = link_to 'Edit', edit_camper_path(camper), class: 'btn btn-default btn-xs'

@@ -3,16 +3,7 @@ h1 New Lot
 = error_messages_for @lot
 
 = form_for @lot, html: { role: 'form' } do |form|
-  .row
-    .col-md-4
-      .form-group
-        = form.label :number
-        = form.text_field :number, class: 'form-control'
-    .col-md-8
-      .form-group
-        = form.label :street
-        = form.collection_select :street_id, @streets, :id, :name, {}, { class: 'form-control' }
-
+  = render form
   .row
     .col-md-12
       .form-group
