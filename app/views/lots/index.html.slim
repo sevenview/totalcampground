@@ -18,3 +18,5 @@ p
               td = link_to lot.number, edit_lot_path(lot)
               td = lot.street.name
               td = link_to 'Edit', edit_lot_path(lot), class: 'btn btn-default btn-xs'
+
+= paginate @lots, theme: 'twitter-bootstrap-3'

@@ -3,6 +3,7 @@ class LotsController < ApplicationController
 
   def index
     @lots = Lot.all.includes(:street).order('streets.name ASC, number ASC')
+               .page(params[:page])
   end
 
   def new

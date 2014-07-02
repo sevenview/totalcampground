@@ -1,6 +1,6 @@
 class StreetsController < ApplicationController
   def index
-    @streets = Street.all.order('name')
+    @streets = Street.all.order('name').page(params[:page])
   end
 
   def new

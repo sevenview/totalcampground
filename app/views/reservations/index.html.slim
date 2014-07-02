@@ -27,3 +27,5 @@ h1= t 'reservations.reservations'
               = link_to('Check Out', edit_reservation_path(reservation), class: 'btn btn-xs btn-default')
             - else
               = link_to('Check In', check_in_reservation_path(reservation), class: 'btn btn-xs btn-info')
+
+= paginate @reservations, theme: 'twitter-bootstrap-3'

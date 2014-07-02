@@ -2,7 +2,7 @@ class ReservationsController < ApplicationController
   before_action :load_data_for_dropdowns, only: [:new, :create, :edit, :update]
 
   def index
-    @reservations = Reservation.all.order(start_date: :asc)
+    @reservations = Reservation.all.order(start_date: :asc).page(params[:page])
   end
 
   def new

@@ -23,3 +23,5 @@ p
           td = camper.mobile
           td
             = link_to 'Edit', edit_camper_path(camper), class: 'btn btn-default btn-xs'
+
+= paginate @campers, theme: 'twitter-bootstrap-3'

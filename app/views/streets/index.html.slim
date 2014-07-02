@@ -16,3 +16,5 @@ p
             tr
               td = street.name
               td = link_to 'Edit', edit_street_path(street), class: 'btn btn-default btn-xs'
+
+= paginate @streets, theme: 'twitter-bootstrap-3'

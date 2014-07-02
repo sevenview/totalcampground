@@ -84,3 +84,7 @@ gem 'devise', '~> 3.2.0'
 
 # Make JS libraries play nice with Turbolinks
 gem 'jquery-turbolinks'
+
+# Kaminari for pagination
+gem 'kaminari'
+gem 'bootstrap-kaminari-views'
