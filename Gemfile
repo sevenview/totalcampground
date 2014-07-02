@@ -39,7 +39,7 @@ group :development do
   gem 'binding_of_caller' # provides REPL with better_errors
 
   # Annotate models
-  gem 'annotate', require: false
+  gem 'annotate'
 end
 
 group :test do
