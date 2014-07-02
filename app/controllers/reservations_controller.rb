@@ -49,7 +49,8 @@ class ReservationsController < ApplicationController
       :camper_id, :start_date, :end_date, :lot_id,
       :adults, :children, :pets, :notes, :checked_in,
       :security_card_number, :credit_card_number,
-      :credit_card_expiry_month, :credit_card_expiry_year
+      :credit_card_expiry_month, :credit_card_expiry_year,
+      :credit_card_type
     )
   end
 

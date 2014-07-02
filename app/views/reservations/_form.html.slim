@@ -49,7 +49,12 @@
       = form.text_field :security_card_number, class: 'form-control'
 
 .row
-  .col-md-8
+  .col-md-2
+    .form-group
+      = form.label :credit_card_type
+      = form.select :credit_card_type, ['Visa', 'MasterCard', 'American Express'],
+                    { include_blank: true }, class: 'form-control'
+  .col-md-6
     .form-group
       = form.label :credit_card_number
       = form.text_field :credit_card_number, class: 'form-control'

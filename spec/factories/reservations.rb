@@ -18,6 +18,7 @@
 #  encrypted_credit_card_number :string(255)
 #  credit_card_expiry_month     :integer
 #  credit_card_expiry_year      :integer
+#  credit_card_type             :string(255)
 #
 # Indexes
 #

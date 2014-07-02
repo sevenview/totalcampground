@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140702185912) do
+ActiveRecord::Schema.define(version: 20140702200518) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20140702185912) do
     t.string   "encrypted_credit_card_number"
     t.integer  "credit_card_expiry_month"
     t.integer  "credit_card_expiry_year"
+    t.string   "credit_card_type"
   end
 
   add_index "reservations", ["camper_id"], name: "index_reservations_on_camper_id", using: :btree
