@@ -4,6 +4,7 @@ User.delete_all
 Street.delete_all
 Lot.delete_all
 Reservation.delete_all
+RvType.delete_all
 
 # Campers
 puts 'Campers...'
@@ -27,6 +28,13 @@ Street.create!(name: 'Moonlight Drive')
 Street.create!(name: 'Rainbow Drive')
 Street.create!(name: 'Waterside Lookout')
 
+# RV Types
+puts 'RV Types...'
+[
+  '5th Wheel', 'Cabin', 'Class A', 'Fold Down', 'Hybrid', 'Motor Coach',
+  'Motor Towing', 'Motorhome', 'Popup', 'Tent', 'Travel Trailer',
+  'Truck Camper', 'Van', 'Yurt', 'Hardtop'
+].each { |name| RvType.create!(name: name) }
 
 # Lots
 puts 'Lots...'
