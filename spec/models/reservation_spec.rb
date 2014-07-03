@@ -39,4 +39,12 @@ describe Reservation, type: :model do
 
   it { is_expected.to belong_to(:camper) }
   it { is_expected.to belong_to(:lot) }
+
+  describe '.nights' do
+    it 'calculates the number of days for the reservation' do
+      reservation.start_date = Date.new(2014, 7, 1)
+      reservation.end_date = Date.new(2014, 7, 3)
+      expect(reservation.nights).to eq(2)
+    end
+  end
 end

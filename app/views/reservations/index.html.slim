@@ -7,6 +7,7 @@ h1= t 'reservations.reservations'
         th = t 'reservations.reservation_number'
         th = t 'reservations.start_date'
         th = t 'reservations.end_date'
+        th Nights
         th = t 'reservations.name'
         th = t 'reservations.lot'
         th Card #
@@ -19,6 +20,7 @@ h1= t 'reservations.reservations'
           td = link_to(reservation.id, edit_reservation_path(reservation))
           td = reservation.start_date
           td = reservation.end_date
+          td = reservation.nights
           td = link_to(reservation.camper.full_name, edit_camper_path(reservation.camper))
           td = link_to(reservation.lot.number_and_street, edit_lot_path(reservation.lot))
           td = reservation.security_card_number

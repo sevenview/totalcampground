@@ -34,4 +34,9 @@ class Reservation < ActiveRecord::Base
 
   include Encryptable
   attr_encrypted :credit_card_number, key: :db_encryption_key
+
+  # Calculates the number of nights in this stay
+  def nights
+    (end_date - start_date).to_i
+  end
 end
