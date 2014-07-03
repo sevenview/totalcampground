@@ -2,7 +2,7 @@
   .col-md-6
     .form-group
       = form.label :camper
-      = form.collection_select :camper_id, @campers, :id, :full_name, {}, {class: 'form-control'}
+      = form.collection_select :camper_id, @campers, :id, :full_name_last_name_first, {}, {class: 'form-control'}
   .col-md-6
     .form-group
       = form.label :lot
