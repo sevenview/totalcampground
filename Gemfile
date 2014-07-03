@@ -53,6 +53,8 @@ end
 group :development, :test do
   gem 'rspec', '~> 3.0.0'
   gem 'rspec-rails'
+  # better spec progress formatter
+  gem 'fivemat', '~> 1.3.1'
 end
 
 gem 'factory_girl_rails', group: [:development, :test, :staging]

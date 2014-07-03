@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Authenticated user' do
+feature 'FEATURE: Authenticated user access' do
   background do
     sign_in FactoryGirl.create(:user)
   end
