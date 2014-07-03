@@ -1,42 +1,50 @@
-.form-group
-  = form.label :first_name
-  = form.text_field :first_name, autofocus: true, class: 'form-control'
+.row
+  .col-md-6
+    .form-group
+      = form.label :first_name
+      = form.text_field :first_name, autofocus: true, class: 'form-control'
+  .col-md-6
+    .form-group
+      = form.label :last_name
+      = form.text_field :last_name, class: 'form-control'
 
-.form-group
-  = form.label :last_name
-  = form.text_field :last_name, class: 'form-control'
+.row
+  .col-md-6
+    .form-group
+      = form.label :address
+      = form.text_field :address, class: 'form-control'
+  .col-md-6
+    .form-group
+      = form.label :city
+      = form.text_field :city, class: 'form-control'
 
-.form-group
-  = form.label :address
-  = form.text_field :address, class: 'form-control'
+.row
+  .col-md-6
+    .form-group
+      = form.label :province
+      = form.text_field :province, class: 'form-control'
+  .col-md-3
+    .form-group
+      = form.label :postal_code
+      = form.text_field :postal_code, class: 'form-control'
+  .col-md-3
+    .form-group
+      = form.label :country
+      = form.text_field :country, class: 'form-control'
 
-.form-group
-  = form.label :city
-  = form.text_field :city, class: 'form-control'
-
-.form-group
-  = form.label :province
-  = form.text_field :province, class: 'form-control'
-
-.form-group
-  = form.label :postal_code
-  = form.text_field :postal_code, class: 'form-control'
-
-.form-group
-  = form.label :country
-  = form.text_field :country, class: 'form-control'
-
-.form-group
-  = form.label :phone
-  = form.text_field :phone, class: 'form-control'
-
-.form-group
-  = form.label :mobile
-  = form.text_field :mobile, class: 'form-control'
-
-.form-group
-  = form.label :email
-  = form.text_field :email, class: 'form-control'
+.row
+  .col-md-4
+    .form-group
+      = form.label :phone
+      = form.text_field :phone, class: 'form-control'
+  .col-md-4
+    .form-group
+      = form.label :mobile
+      = form.text_field :mobile, class: 'form-control'
+  .col-md-4
+    .form-group
+      = form.label :email
+      = form.text_field :email, class: 'form-control'
 
 .form-group
   = form.label :notes
