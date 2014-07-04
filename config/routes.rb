@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   resources :campers
   resources :lots
   resources :streets
-
+  resources :rv_types
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

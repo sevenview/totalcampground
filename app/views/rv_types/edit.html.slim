@@ -1,0 +1,10 @@
+h1 Update RV Type: #{@rv_type.name}
+
+= error_messages_for @rv_type
+
+= form_for @rv_type, html: { role: 'form' } do |form|
+  = render form
+  .form-group
+    => form.submit 'Update RV Type', class: 'btn btn-primary'
+    ' or
+    = link_to 'Cancel', rv_types_path

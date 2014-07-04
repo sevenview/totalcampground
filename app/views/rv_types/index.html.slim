@@ -1,0 +1,20 @@
+h1 RV Types
+
+p
+  = link_to 'New RV Type', new_rv_type_path, class: 'btn btn-primary'
+
+.row
+  .col-md-4
+    .table-responsive
+      table.table.table-striped
+        thead
+          tr
+            th Name
+            th &nbsp
+        tbody
+          - @rv_types.each do |rv_type|
+            tr
+              td = rv_type.name
+              td = link_to 'Edit', edit_rv_type_path(rv_type), class: 'btn btn-default btn-xs'
+
+= paginate @rv_types, theme: 'twitter-bootstrap-3'
