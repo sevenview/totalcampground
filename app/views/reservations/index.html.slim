@@ -14,15 +14,23 @@ h1= t 'reservations.reservations'
         th = t 'reservations.status'
         th &nbsp;
         th &nbsp;
-        th &nbsp;
     tbody
       - @reservations.each do |reservation|
         tr
-          td = link_to(reservation.id, edit_reservation_path(reservation))
+          td
+            = link_to reservation.id, edit_reservation_path(reservation),
+                      class: 'note-popover',
+                      title: "Notes for Reservation #{reservation.id}",
+                      data: { toggle: 'popover', content: reservation.notes, trigger: 'hover' }
           td = reservation.start_date
           td = reservation.end_date
           td = reservation.nights
-          td = link_to(reservation.camper.full_name, edit_camper_path(reservation.camper))
+          td
+            = link_to reservation.camper.full_name, edit_camper_path(reservation.camper),
+                      class: 'note-popover',
+                      title: "Notes for #{reservation.camper.full_name}",
+                      data: { toggle: 'popover', content: reservation.camper.notes, trigger: 'hover' }
+
           td = link_to(reservation.lot.number_and_street, edit_lot_path(reservation.lot))
           td = reservation.security_card_number
           td
@@ -35,13 +43,5 @@ h1= t 'reservations.reservations'
               = link_to('Check In', check_in_reservation_path(reservation), class: 'btn btn-xs btn-info')
           td
             = link_to 'View', edit_reservation_path(reservation), class: 'btn btn-xs btn-info'
-          td
-            button[type="button"
-                   class="note-popover btn btn-xs"
-                   title="##{reservation.id}: #{reservation.camper.full_name}"
-                   data-toggle="popover"
-                   data-content="#{reservation.notes}"
-                   data-placement="left"
-                   data-trigger="hover"] Notes
 
 = paginate @reservations, theme: 'twitter-bootstrap-3'
