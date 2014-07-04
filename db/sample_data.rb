@@ -63,6 +63,8 @@ puts 'Reservations...'
     camper:     camper,
     lot:        lot,
     checked_in: [true, false].sample,
-    security_card_number: rand(100)
+    security_card_number: rand(100),
+    notes: Faker::Lorem.paragraph
+
   )
 end
