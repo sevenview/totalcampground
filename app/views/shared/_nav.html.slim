@@ -32,7 +32,7 @@ nav.navbar.navbar-default.navbar-static-top role="navigation"
 
 / Show the New Reservation button unless we're on the New Reservation form
 - unless current_page?(new_reservation_path)
-  .container
+  .container-fluid
     .pull-right
       p
         = link_to new_reservation_path, class: 'btn btn-success' do
