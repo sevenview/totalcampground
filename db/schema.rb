@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140703232438) do
+ActiveRecord::Schema.define(version: 20140704021738) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,10 +59,12 @@ ActiveRecord::Schema.define(version: 20140703232438) do
     t.integer  "credit_card_expiry_month"
     t.integer  "credit_card_expiry_year"
     t.string   "credit_card_type"
+    t.integer  "rv_type_id"
   end
 
   add_index "reservations", ["camper_id"], name: "index_reservations_on_camper_id", using: :btree
   add_index "reservations", ["lot_id"], name: "index_reservations_on_lot_id", using: :btree
+  add_index "reservations", ["rv_type_id"], name: "index_reservations_on_rv_type_id", using: :btree
 
   create_table "rv_types", force: true do |t|
     t.string   "name"

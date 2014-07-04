@@ -2,15 +2,10 @@
   .col-md-6
     .form-group
       = form.label :camper
-      = form.collection_select :camper_id, @campers, :id, :full_name_last_name_first, {}, {class: 'form-control'}
-  .col-md-6
-    .form-group
-      = form.label :lot
-      = form.grouped_collection_select(:lot_id, @streets, :lots, :name, :id, :number_and_street,
-                                       { include_blank: true }, { class: 'form-control'} )
+      = form.collection_select :camper_id, @campers, :id, :full_name_last_name_first,
+                               {}, {class: 'form-control'}
 
-.row
-  .col-md-6
+  .col-md-3
     .form-group
       = form.label :start_date, 'Arrive'
       .input-group
@@ -19,7 +14,7 @@
                           placeholder: 'yyyy/mm/dd')
         span.input-group-addon
           span.glyphicon.glyphicon-th
-  .col-md-6
+  .col-md-3
     .form-group
       = form.label :end_date, 'Depart'
       .input-group
@@ -28,6 +23,20 @@
                           placeholder: 'yyyy/mm/dd')
         span.input-group-addon
           span.glyphicon.glyphicon-th
+
+
+
+.row
+  .col-md-6
+    .form-group
+      = form.label :lot
+      = form.grouped_collection_select(:lot_id, @streets, :lots, :name, :id, :number_and_street,
+                                       { include_blank: true }, { class: 'form-control'} )
+  .col-md-6
+    .form-group
+      = form.label :rv_type, 'RV type'
+      = form.collection_select :rv_type_id, @rv_types, :id, :name,
+                               { include_blank: true }, { class: 'form-control' }
 
 .row
   .col-md-3

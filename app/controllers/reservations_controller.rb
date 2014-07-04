@@ -50,12 +50,13 @@ class ReservationsController < ApplicationController
       :adults, :children, :pets, :notes, :checked_in,
       :security_card_number, :credit_card_number,
       :credit_card_expiry_month, :credit_card_expiry_year,
-      :credit_card_type
+      :credit_card_type, :rv_type_id
     )
   end
 
   def load_data_for_dropdowns
     @campers = Camper.all.order(:last_name, :first_name)
     @streets = Street.all
+    @rv_types = RvType.all.order(:name)
   end
 end

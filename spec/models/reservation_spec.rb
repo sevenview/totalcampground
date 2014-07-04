@@ -19,11 +19,13 @@
 #  credit_card_expiry_month     :integer
 #  credit_card_expiry_year      :integer
 #  credit_card_type             :string(255)
+#  rv_type_id                   :integer
 #
 # Indexes
 #
-#  index_reservations_on_camper_id  (camper_id)
-#  index_reservations_on_lot_id     (lot_id)
+#  index_reservations_on_camper_id   (camper_id)
+#  index_reservations_on_lot_id      (lot_id)
+#  index_reservations_on_rv_type_id  (rv_type_id)
 #
 
 require 'rails_helper'
@@ -39,6 +41,7 @@ describe Reservation, type: :model do
 
   it { is_expected.to belong_to(:camper) }
   it { is_expected.to belong_to(:lot) }
+  it { is_expected.to belong_to(:rv_type) }
 
   describe '.nights' do
     it 'calculates the number of days for the reservation' do
