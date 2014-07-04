@@ -7,6 +7,7 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
+    @camper = Camper.new # needed for adding Camper from Reservation form
   end
 
   def create
