@@ -2,6 +2,9 @@
   .col-md-6
     .form-group
       = form.label :camper
+      - if @reservation.camper
+        | &nbsp;
+        = link_to '(view)', edit_camper_path(@reservation.camper), class: 'small'
       = form.collection_select :camper_id, @campers, :id, :full_name_last_name_first,
                                {}, {class: 'form-control'}
 
@@ -30,11 +33,17 @@
   .col-md-6
     .form-group
       = form.label :lot
+      - if @reservation.lot
+        | &nbsp;
+        = link_to '(view)', edit_lot_path(@reservation.lot), class: 'small'
       = form.grouped_collection_select(:lot_id, @streets, :lots, :name, :id, :number_and_street,
                                        { include_blank: true }, { class: 'form-control'} )
   .col-md-6
     .form-group
       = form.label :rv_type, 'RV type'
+      - if @reservation.rv_type
+        | &nbsp;
+        = link_to '(view)', edit_rv_type_path(@reservation.rv_type), class: 'small'
       = form.collection_select :rv_type_id, @rv_types, :id, :name,
                                { include_blank: true }, { class: 'form-control' }
 
