@@ -1,9 +1,41 @@
+- content_for :last do
+  = javascript_include_tag('reservation')
+
 h1 New Reservation
 
 = error_messages_for @reservation
 
+// Allow user to either select an existing camper or create a new one
+// This is only rendered in the 'New' action so it's not in the _form file.
+// We have a hidden form field for the camper_id that gets populated via JS
+// when the selection changes.
+.row
+  .col-md-12
+    / Existing Camper selection
+    .well.well-sm#reservation_existing_camper
+      .form-group
+        = label_tag :camper_id, 'Camper'
+        = select_tag :camper_id,
+                    options_from_collection_for_select(@campers, :id, :full_name_last_name_first),
+                    { include_blank: true, class: 'form-control' }
+        p
+        ' or
+        = link_to 'Create a new camper', '#', id: 'new_camper'
+
+    / New Camper form
+    .well.well-sm.not-displayed#reservation_new_camper
+      h3 Camper
+      / = form_for @camper, remote: true, html: { role: 'form' } do |camper_form|
+      /   = render partial: 'campers/form', locals: { form: camper_form }
+      /   = camper_form.submit 'Create Camper', class: 'btn btn-primary'
+      p
+      ' or'
+      = link_to 'Select an existing camper', '#', id: 'existing_camper'
+
+
 = form_for @reservation, html: {role: 'form'} do |form|
   = render form
+  = form.hidden_field :camper_id
   = form.submit 'Create Reservation', class: 'btn btn-primary'
   | &nbsp;or&nbsp;
   = link_to('Cancel', :back)

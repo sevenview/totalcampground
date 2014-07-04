@@ -1,29 +1,4 @@
 .row
-  .col-md-12
-    / Existing Camper selection
-    .well.well-sm#reservation_existing_camper
-      .form-group
-        = form.label :camper
-        - if @reservation.camper
-          | &nbsp;
-          = link_to '(view)', edit_camper_path(@reservation.camper), class: 'small'
-        = form.collection_select :camper_id, @campers, :id, :full_name_last_name_first,
-                                 {}, {class: 'form-control'}
-        p
-        ' or
-        = link_to 'Create a new camper', '#', id: 'new_camper'
-
-    / New Camper form
-    .well.well-sm.not-displayed#reservation_new_camper
-      h3 Camper
-      = form_for @camper, remote: true, html: { role: 'form' } do |camper_form|
-        = render partial: 'campers/form', locals: { form: camper_form }
-        = camper_form.submit 'Create Camper', class: 'btn btn-primary'
-        p
-        ' or
-        = link_to 'Select an existing camper', '#', id: 'existing_camper'
-
-.row
   .col-md-6
     .form-group
       = form.label :start_date, 'Arrive'
@@ -42,8 +17,6 @@
                           placeholder: 'yyyy/mm/dd')
         span.input-group-addon
           span.glyphicon.glyphicon-th
-
-
 
 .row
   .col-md-6

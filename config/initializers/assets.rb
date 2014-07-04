@@ -1,1 +1,1 @@
-Rails.application.config.assets.precompile += %w( last.js )
+Rails.application.config.assets.precompile += %w( reservation.js )

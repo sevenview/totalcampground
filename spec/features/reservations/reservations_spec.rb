@@ -14,12 +14,12 @@ feature 'FEATURE: Reservations', type: :feature do
     expect(page).to have_content reservation.camper.full_name
   end
 
-  scenario 'User adds a new reservation' do
+  scenario 'User adds a new reservation', js: true do
     camper = FactoryGirl.create(:camper)
     lot = FactoryGirl.create(:lot)
     visit root_path
     click_link 'New Reservation'
-    select camper.full_name_last_name_first, from: 'reservation_camper_id'
+    select camper.full_name_last_name_first, from: 'camper_id'
     fill_in 'Arrive', with: '2014-06-19'
     fill_in 'Depart', with: '2014-06-20'
     fill_in 'Adults', with: '2'

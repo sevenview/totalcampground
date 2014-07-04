@@ -3,6 +3,13 @@ h1 Reservation #{@reservation.id}
 = error_messages_for @reservation
 
 = form_for @reservation, html: {role: 'form'} do |form|
+  .form-group
+    = form.label :camper
+    - if @reservation.camper
+      | &nbsp;
+      = link_to '(view)', edit_camper_path(@reservation.camper), class: 'small'
+    = form.collection_select :camper_id, @campers, :id, :full_name_last_name_first,
+                             {}, {class: 'form-control'}
   = render form
   = form.submit 'Update Reservation', class: 'btn btn-primary'
   | &nbsp;or&nbsp;
