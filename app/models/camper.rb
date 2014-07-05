@@ -23,6 +23,8 @@ class Camper < ActiveRecord::Base
   validates :first_name, :last_name, presence: true
   validate :check_for_presence_of_phone_or_mobile_number
 
+  scope :active, -> { where(active: true) }
+  
   def full_name
     "#{first_name} #{last_name}"
   end
