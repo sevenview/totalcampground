@@ -85,5 +85,6 @@
 .row
   .col-md-12
     .form-group
-      => form.check_box :checked_in
-      = form.label :checked_in
+      = form.label :checked_in, class: 'checkbox checkbox-inline' do
+        = form.check_box :checked_in
+        | Checked In

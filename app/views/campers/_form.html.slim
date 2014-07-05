@@ -51,5 +51,6 @@
   = form.text_area :notes, class: 'form-control'
 
 .form-group
-  = form.label :active
-  = form.check_box :active, class: 'form-control'
+  = form.label :active, class: 'checkbox checkbox-inline' do
+    = form.check_box :active, class: 'checkbox'
+    | Active
