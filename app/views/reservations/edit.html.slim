@@ -3,6 +3,8 @@ h1 Reservation #{@reservation.id}
 = error_messages_for @reservation
 
 = form_for @reservation, html: {role: 'form'} do |form|
+  / We're rendering the camper selection outside the partial because we show
+  / it differently in the New action.
   .form-group
     = form.label :camper
     - if @reservation.camper
