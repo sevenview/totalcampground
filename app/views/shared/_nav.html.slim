@@ -16,6 +16,9 @@ nav.navbar.navbar-default.navbar-static-top role="navigation"
           li = link_to 'Campers', campers_path
       ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
+          li.new-reservation = link_to new_reservation_path do
+            span.glyphicon.glyphicon-book>
+            | &nbsp;New Reservation
           li.dropdown
             a.dropdown-toggle data-toggle="dropdown" href="#"
               | Settings
@@ -27,12 +30,3 @@ nav.navbar.navbar-default.navbar-static-top role="navigation"
           li = link_to 'Log Out', destroy_user_session_path, method: :delete
         - else
           li = link_to 'Log In', new_user_session_path
-
-/ Show the New Reservation button unless we're on the New Reservation form
-- unless current_page?(new_reservation_path)
-  .container-fluid
-    .pull-right
-      p
-        = link_to new_reservation_path, class: 'btn btn-success' do
-          span.glyphicon.glyphicon-plus>
-          | New Reservation

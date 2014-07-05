@@ -13,8 +13,15 @@
  *= require_self
  */
 
+// First import Bootswatch theme variables
+@import "bootswatch/flatly/variables";
+// Now Bootstrap
 @import "bootstrap";
-@import "bootstrap/variables";
+// Then the Bootstrap theme
+@import "bootswatch/flatly/bootswatch";
+
+// @import "bootstrap/variables";
+
 @import "bootstrap-datepicker3";
 @import "global";
 @import "layout/footer";

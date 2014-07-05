@@ -80,6 +80,9 @@ gem 'bootstrap-sass', '~> 3.2.0.0'
 # Bootstrap datepicker
 gem 'bootstrap-datepicker-rails', '~> 1.3.0.2'
 
+# Bootswatch templates
+gem 'bootswatch-rails', '~> 3.1.1.1'
+
 # Slim templating instead of default ERB
 gem 'slim-rails', '~> 2.1.5'
 

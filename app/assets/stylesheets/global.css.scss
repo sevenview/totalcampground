@@ -16,3 +16,11 @@ table a.btn, .table a.btn {
     margin-top: 0;
   }
 }
+
+// New Reservation button on navbar
+.navbar-default .navbar-nav > li.new-reservation {
+  background-color: darken($brand-success, 10);
+  a:hover {
+    color: darken($brand-primary, 5);
+  }
+}
