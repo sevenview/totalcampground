@@ -23,5 +23,11 @@ p
           td = camper.mobile
           td
             = link_to 'Edit', edit_camper_path(camper), class: 'btn btn-default btn-xs'
+            ' &nbsp;
+            = link_to new_reservation_path(camper_id: camper.id),
+                      class: 'btn btn-primary btn-xs' do
+                        .glyphicon.glyphicon-plus
+                        | Reserve
+
 
 = paginate @campers, theme: 'twitter-bootstrap-3'

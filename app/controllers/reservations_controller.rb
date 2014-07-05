@@ -7,7 +7,9 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
-    @camper = Camper.new # needed for adding Camper from Reservation form
+
+    # Check to see if we're being redirected from creating a new camper
+    @reservation.camper = Camper.find(params[:camper_id]) if params[:camper_id]
   end
 
   def create

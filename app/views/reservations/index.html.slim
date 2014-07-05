@@ -39,8 +39,8 @@ h5.text-muted
               span.label.label-success Checked In
           td
             - if reservation.checked_in?
-              = link_to('Check Out', edit_reservation_path(reservation), class: 'btn btn-xs btn-warning')
+              = link_to('Check Out', edit_reservation_path(reservation), class: 'btn btn-xs btn-default')
             - else
-              = link_to('Check In', check_in_reservation_path(reservation), class: 'btn btn-xs btn-info')
+              = link_to('Check In', check_in_reservation_path(reservation), class: 'btn btn-xs btn-primary')
 
 = paginate @reservations, theme: 'twitter-bootstrap-3'

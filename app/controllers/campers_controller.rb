@@ -12,7 +12,13 @@ class CampersController < ApplicationController
     @camper = Camper.new(camper_params)
     if @camper.save
       flash[:success] = "Created camper #{@camper.full_name}"
-      redirect_to campers_path
+
+      # redirect based on which submit button was clicked
+      if params[:commit] == 'Create Camper'
+        redirect_to campers_path
+      else
+        redirect_to new_reservation_path(camper_id: @camper.id)
+      end
     else
       render :new
     end

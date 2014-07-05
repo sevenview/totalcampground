@@ -39,4 +39,24 @@ feature 'FEATURE: Camper Management', type: :feature do
     click_button 'Update Camper'
     expect(page).to have_content('Updated camper Flurby Flow')
   end
+
+  scenario 'User creates a camper and adds a reservation' do
+    visit campers_path
+    click_link 'New Camper'
+    fill_in 'First name', with: 'John'
+    fill_in 'Last name', with: 'Doe'
+    fill_in 'Phone', with: '555-555-5555'
+    click_button 'Create and Add Reservation'
+    expect(page).to have_content('New Reservation')
+    # Camper dropdown should have the newly created camper selected
+    expect(page).to have_select('reservation_camper_id', selected: 'Doe, John')
+  end
+
+  scenario 'User initiates a new reservation from the campers master listing' do
+    FactoryGirl.create(:camper, first_name: 'John', last_name: 'Doe')
+    visit campers_path
+    click_link 'Reserve'
+    expect(page).to have_content 'New Reservation'
+    expect(page).to have_select('reservation_camper_id', selected: 'Doe, John')
+  end
 end
