@@ -12,6 +12,7 @@ p
         th Country
         th Phone
         th Mobile
+        th Status
         th &nbsp;
     tbody
       - @campers.each do |camper|
@@ -21,6 +22,9 @@ p
           td = camper.country
           td = camper.phone
           td = camper.mobile
+          td
+            - if !camper.active?
+              span.label.label-default Inactive
           td
             = link_to 'Edit', edit_camper_path(camper), class: 'btn btn-default btn-xs'
             ' &nbsp;
