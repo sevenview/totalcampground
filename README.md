@@ -47,6 +47,10 @@ In order to encrypt database columns, you need to set
 
 * `DB_ENCRYPTION_KEY`
 
+If you want to use Google Analytics:
+
+* `GA_TRACKING_ID`
+
 Deployment
 ----------
 
