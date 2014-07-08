@@ -27,6 +27,7 @@ Street.create!(name: 'Tenter\'s Delight')
 Street.create!(name: 'Moonlight Drive')
 Street.create!(name: 'Rainbow Drive')
 Street.create!(name: 'Waterside Lookout')
+Street.create!(name: 'Brookside')
 
 # RV Types
 puts 'RV Types...'

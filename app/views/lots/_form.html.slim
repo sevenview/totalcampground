@@ -1,8 +1,14 @@
 .row
-  .col-md-4
+  .col-md-3
     .form-group
       = form.label :number
       = form.text_field :number, class: 'form-control', autofocus: true
+
+  .col-md-1
+    .form-group
+      = form.label :division
+      = form.text_field :division, class: 'form-control'
+
 .row
   .col-md-4
     .form-group

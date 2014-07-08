@@ -7,6 +7,7 @@
 #  created_at :datetime
 #  updated_at :datetime
 #  street_id  :integer
+#  division   :string(255)
 #
 # Indexes
 #
@@ -18,7 +19,11 @@ class Lot < ActiveRecord::Base
 
   belongs_to :street
 
+  def full_number
+    "#{number}#{division}"
+  end
+
   def number_and_street
-    "#{number} #{street.name}"
+    "#{full_number} #{street.name}"
   end
 end

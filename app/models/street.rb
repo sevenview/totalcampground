@@ -11,5 +11,5 @@
 class Street < ActiveRecord::Base
   validates :name, presence: true
 
-  has_many :lots
+  has_many :lots, -> { order('number, division') }
 end

@@ -2,7 +2,7 @@ class LotsController < ApplicationController
   before_action :load_dropdown_data, only: [:new, :create, :edit, :update]
 
   def index
-    @lots = Lot.all.includes(:street).order('streets.name ASC, number ASC')
+    @lots = Lot.all.includes(:street).order('streets.name, number, division')
                .page(params[:page])
   end
 
@@ -42,6 +42,6 @@ class LotsController < ApplicationController
   end
 
   def lot_params
-    params.require(:lot).permit(:number, :street_id)
+    params.require(:lot).permit(:number, :division, :street_id)
   end
 end
