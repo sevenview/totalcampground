@@ -1,3 +1,9 @@
+# Don't allow this script to run in Production!
+if Rails.env.production?
+  puts 'This task is not meant to run in PRODUCTION!'
+  exit!
+end
+
 # Reset data
 Camper.delete_all
 User.delete_all
