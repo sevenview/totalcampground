@@ -50,4 +50,25 @@ describe Reservation, type: :model do
       expect(reservation.nights).to eq(2)
     end
   end
+
+  describe '#all_current' do
+    it 'returns reservations that end today or later' do
+      # reservation that ends yesterday and is not checked in (should not be returned)
+      FactoryGirl.create(:reservation, end_date: 1.day.ago)
+      # reservation that ends today (should be returned)
+      FactoryGirl.create(:reservation, end_date: Date.today)
+      # reservation that ends a week from today (should be returned)
+      FactoryGirl.create(:reservation, end_date: 1.week.from_now)
+      expect(Reservation.all_current.size).to eq(2)
+    end
+
+    it 'returns reservations that end earlier than today but are still checked in' do
+      # reservation that ends two days ago but is still checked in
+      # (should be returned)
+      FactoryGirl.create(:reservation, end_date: 2.days.ago, checked_in: true)
+      # reservation that ends yesterday and is not checked in (should not be returned)
+      FactoryGirl.create(:reservation, end_date: 1.day.ago)
+      expect(Reservation.all_current.size).to eq(1)
+    end
+  end
 end

@@ -52,7 +52,7 @@ end
 # Reservations
 puts 'Reservations...'
 30.times do
-  start_date = Date.today + rand(0..100)
+  start_date = Date.today + rand(-30..100)
   end_date = start_date + rand(1..30)
   # Pull out a random camper and lot
   camper = Camper.offset(rand(Camper.count)).first
@@ -66,6 +66,5 @@ puts 'Reservations...'
     checked_in: [true, false].sample,
     security_card_number: rand(100),
     notes: Faker::Lorem.paragraph
-
   )
 end

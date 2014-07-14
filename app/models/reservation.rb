@@ -42,4 +42,8 @@ class Reservation < ActiveRecord::Base
   def nights
     (end_date - start_date).to_i
   end
+
+  def self.all_current
+    where('(end_date >= ?) OR (end_date < ? AND checked_in = true)', Date.today, Date.today)
+  end
 end

@@ -10,6 +10,6 @@
 
 FactoryGirl.define do
   factory :rv_type do
-    name 'Motorhome'
+    sequence(:name) { |n| "Motorhome #{n}" }
   end
 end
