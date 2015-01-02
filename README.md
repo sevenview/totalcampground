@@ -10,7 +10,7 @@ own discretion.
 Dependencies
 ------------
 * [Ruby on Rails](http://www.rubyonrails.org) 4.1
-* Ruby 2+
+* Ruby 2.1.5+
 * Postgresql 9+
 
 
