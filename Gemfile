@@ -44,7 +44,7 @@ group :development do
 end
 
 group :test do
-  gem 'poltergeist', '~> 1.5.1'
+  gem 'poltergeist', '~> 1.6.0'
   gem 'capybara', '~> 2.3.0'
   # Launchy is required so we can call save_and_open_page in Capybara
   gem 'launchy', '~> 2.4.2'
