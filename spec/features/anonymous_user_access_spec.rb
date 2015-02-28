@@ -8,7 +8,7 @@ feature 'FEATURE: Anonymous user access' do
     expect(current_path).to eq new_user_session_path
   end
 
-  scenario 'doesn not see protected menu items' do
+  scenario 'does not see protected menu items' do
     visit root_path
     expect(page).to have_no_content('Log Out')
     expect(page).to have_no_content('Reservation List')
