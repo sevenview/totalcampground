@@ -20,6 +20,7 @@
 #  credit_card_expiry_year      :integer
 #  credit_card_type             :string(255)
 #  rv_type_id                   :integer
+#  active                       :boolean          default(TRUE)
 #
 # Indexes
 #
