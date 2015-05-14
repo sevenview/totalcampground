@@ -13,8 +13,8 @@ nav.navbar.navbar-default.navbar-static-top role="navigation"
       ul.nav.navbar-nav
         - if user_signed_in?
           li = link_to 'Reservations', reservations_path
-          li = link_to 'Campers', campers_path
           li = link_to 'Seasonals', seasonal_reservations_path
+          li = link_to 'Campers', campers_path
       ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
           li.new-reservation = link_to new_reservation_path do
