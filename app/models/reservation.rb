@@ -21,6 +21,7 @@
 #  credit_card_type             :string(255)
 #  rv_type_id                   :integer
 #  active                       :boolean          default(TRUE)
+#  seasonal                     :boolean          default(FALSE)
 #
 # Indexes
 #
@@ -45,7 +46,11 @@ class Reservation < ActiveRecord::Base
   end
 
   def self.all_current
-    where('((end_date >= ?) OR (end_date < ? AND checked_in = true)) AND active = true', Date.today, Date.today)
+    where('((end_date >= ?) OR (end_date < ? AND checked_in = true)) AND active = true AND seasonal = false', Date.today, Date.today)
+  end
+
+  def self.all_seasonals
+    where('seasonal = true')
   end
 
 end

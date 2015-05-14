@@ -86,12 +86,20 @@
   .col-md-12
     .form-group
       = form.label :checked_in, class: 'checkbox checkbox-inline' do
-        = form.check_box :checked_in
-        | Checked In
-
+        = form.check_box :checked_in,
+                         data: { toggle: 'toggle',
+                                 on: 'Checked In',
+                                 off: 'Not Checked In',
+                                 onstyle: 'success'}
 .row
   .col-md-12
     .form-group
-      = form.label :active, class: 'checkbox checkbox-inline' do
-        = form.check_box :active
-        | Active
+      = form.label :seasonal, class: 'checkbox checkbox-inline' do
+        = form.check_box :seasonal,
+                         data: { toggle: 'toggle',
+                                 on: 'Yes',
+                                 off: 'No',
+                                 onstyle: 'info' }
+        | Seasonal
+                                 
+                      
