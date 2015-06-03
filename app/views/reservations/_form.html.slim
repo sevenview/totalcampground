@@ -102,4 +102,16 @@
                                  onstyle: 'info' }
         | Seasonal
                                  
+.row
+  .col-md-12
+    .form-group
+      = form.label :active, class: 'checkbox checkbox-inline' do
+        = form.check_box :active,
+                         data: { toggle: 'toggle',
+                                 on: 'Active',
+                                 off: 'Inactive',
+                                 onstyle: 'success',
+                                 offstyle: 'danger'}
+                                                       
+                                            
                       

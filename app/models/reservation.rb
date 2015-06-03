@@ -50,7 +50,7 @@ class Reservation < ActiveRecord::Base
   end
 
   def self.all_seasonals
-    where('seasonal = true')
+    where(seasonal: true, active: true)
   end
 
 end
