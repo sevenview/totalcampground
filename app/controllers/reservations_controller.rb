@@ -49,6 +49,10 @@ class ReservationsController < ApplicationController
     @reservations = Reservation.all_seasonals.joins(:camper).order('campers.last_name').page(params[:page])
   end
 
+  def inactive
+    @reservations = Reservation.where(active:false).page(params[:page])
+  end
+
   private
 
   def reservation_params

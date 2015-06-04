@@ -1,0 +1,45 @@
+h5.text-muted
+  | Click a reservation number to view
+
+.table-responsive
+  table.table.table-striped.table-condensed
+    thead
+      tr
+        th = t 'reservations.reservation_number'
+        th = t 'reservations.start_date'
+        th = t 'reservations.end_date'
+        th Nights
+        th = t 'reservations.name'
+        th = t 'reservations.lot'
+        th Card #
+        th = t 'reservations.status'
+        th &nbsp;
+    tbody
+      - @reservations.each do |reservation|
+        tr
+          td
+            = link_to reservation.id, edit_reservation_path(reservation),
+                      class: 'note-popover',
+                      title: "Notes for Reservation #{reservation.id}",
+                      data: { toggle: 'popover', content: reservation.notes, trigger: 'hover' }
+          td = reservation.start_date
+          td = reservation.end_date
+          td = reservation.nights
+          td
+            = link_to reservation.camper.full_name, edit_camper_path(reservation.camper),
+                      class: 'note-popover',
+                      title: "Notes for #{reservation.camper.full_name}",
+                      data: { toggle: 'popover', content: reservation.camper.notes, trigger: 'hover' }
+
+          td = link_to(reservation.lot.number_and_street, edit_lot_path(reservation.lot))
+          td = reservation.security_card_number
+          td
+            - if reservation.checked_in?
+              span.label.label-success Checked In
+          td
+            - if reservation.checked_in?
+              = link_to('Check Out', edit_reservation_path(reservation), class: 'btn btn-xs btn-default')
+            - else
+              = link_to('Check In', check_in_reservation_path(reservation), class: 'btn btn-xs btn-primary')
+
+= paginate @reservations, theme: 'twitter-bootstrap-3'

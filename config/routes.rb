@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   resources :reservations do
     collection do
       get 'seasonal'
+      get 'inactive'
     end
-    
+
     member do
       get 'check_in'
     end
