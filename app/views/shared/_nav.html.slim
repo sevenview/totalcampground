@@ -28,6 +28,8 @@ nav.navbar.navbar-default.navbar-static-top role="navigation"
               li = link_to 'Lots', lots_path
               li = link_to 'Streets', streets_path
               li = link_to 'RV Types', rv_types_path
+              li.divider
+              li = link_to 'Inactive Reservations', inactive_reservations_path
           li = link_to 'Log Out', destroy_user_session_path, method: :delete
         - else
           li = link_to 'Log In', new_user_session_path
