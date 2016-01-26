@@ -27,7 +27,9 @@ feature 'FEATURE: Reservations', type: :feature do
     fill_in 'Pets', with: '1'
     select lot.number, from: 'reservation_lot_id'
     fill_in 'Note', with: Faker::Lorem.sentence
-    check 'reservation_checked_in'
+    # Selects Parent
+    page.find('label', text: 'Not Checked In', match: :first).click
+    save_and_open_page
     click_button 'Create Reservation'
     expect(page).to have_content('A new reservation has been created.')
   end
