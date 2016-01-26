@@ -45,6 +45,14 @@ class ReservationsController < ApplicationController
     redirect_to reservations_path
   end
 
+  def seasonal
+    @reservations = Reservation.all_seasonals.joins(:camper).order('campers.last_name').page(params[:page])
+  end
+
+  def inactive
+    @reservations = Reservation.where(active:false).page(params[:page])
+  end
+
   private
 
   def reservation_params
@@ -53,7 +61,7 @@ class ReservationsController < ApplicationController
       :adults, :children, :pets, :notes, :checked_in,
       :security_card_number, :credit_card_number,
       :credit_card_expiry_month, :credit_card_expiry_year,
-      :credit_card_type, :rv_type_id, :active
+      :credit_card_type, :rv_type_id, :active, :seasonal
     )
   end
 

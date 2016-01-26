@@ -21,6 +21,7 @@
 #  credit_card_type             :string(255)
 #  rv_type_id                   :integer
 #  active                       :boolean          default(TRUE)
+#  seasonal                     :boolean          default(FALSE)
 #
 # Indexes
 #

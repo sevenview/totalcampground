@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   root to: 'reservations#index'
 
   resources :reservations do
+    collection do
+      get 'seasonal'
+      get 'inactive'
+    end
+
     member do
       get 'check_in'
     end
@@ -13,7 +18,7 @@ Rails.application.routes.draw do
   resources :lots
   resources :streets
   resources :rv_types
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

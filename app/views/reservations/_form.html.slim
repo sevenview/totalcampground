@@ -21,14 +21,6 @@
 .row
   .col-md-6
     .form-group
-      = form.label :lot
-      - if @reservation.lot
-        | &nbsp;
-        = link_to '(view)', edit_lot_path(@reservation.lot), class: 'small'
-      = form.grouped_collection_select(:lot_id, @streets, :lots, :name, :id, :number_and_street,
-                                       { include_blank: true }, { class: 'form-control'} )
-  .col-md-6
-    .form-group
       = form.label :rv_type, 'RV type'
       - if @reservation.rv_type
         | &nbsp;
@@ -36,6 +28,14 @@
       = form.collection_select :rv_type_id, @rv_types, :id, :name,
                                { include_blank: true }, { class: 'form-control' }
 
+  .col-md-6
+    .form-group
+      = form.label :lot
+      - if @reservation.lot
+        | &nbsp;
+        = link_to '(view)', edit_lot_path(@reservation.lot), class: 'small'
+      = form.grouped_collection_select(:lot_id, @streets, :lots, :name, :id, :number_and_street,
+                                       { include_blank: true }, { class: 'form-control'} )
 .row
   .col-md-3
     .form-group
@@ -86,12 +86,32 @@
   .col-md-12
     .form-group
       = form.label :checked_in, class: 'checkbox checkbox-inline' do
-        = form.check_box :checked_in
-        | Checked In
-
+        = form.check_box :checked_in,
+                         data: { toggle: 'toggle',
+                                 on: 'Checked In',
+                                 off: 'Not Checked In',
+                                 onstyle: 'success'}
+.row
+  .col-md-12
+    .form-group
+      = form.label :seasonal, class: 'checkbox checkbox-inline' do
+        = form.check_box :seasonal,
+                         data: { toggle: 'toggle',
+                                 on: 'Yes',
+                                 off: 'No',
+                                 onstyle: 'info' }
+        | Seasonal
+                                 
 .row
   .col-md-12
     .form-group
       = form.label :active, class: 'checkbox checkbox-inline' do
-        = form.check_box :active
-        | Active
+        = form.check_box :active,
+                         data: { toggle: 'toggle',
+                                 on: 'Active',
+                                 off: 'Inactive',
+                                 onstyle: 'success',
+                                 offstyle: 'danger'}
+                                                       
+                                            
+                      
