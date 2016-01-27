@@ -88,7 +88,7 @@ gem 'bootswatch-rails', '~> 3.1.1.1'
 gem 'slim-rails', '~> 2.1.5'
 
 # Devise for authentication
-gem 'devise', '~> 3.2.0'
+gem 'devise', '~> 3.5.5'
 
 # Make JS libraries play nice with Turbolinks
 gem 'jquery-turbolinks', '~> 2.0.2'
