@@ -29,7 +29,7 @@ feature 'FEATURE: Reservations', type: :feature do
     fill_in 'Note', with: Faker::Lorem.sentence
     # Selects Parent
     page.find('label', text: 'Not Checked In', match: :first).click
-    save_and_open_page
+    # save_and_open_page
     click_button 'Create Reservation'
     expect(page).to have_content('A new reservation has been created.')
   end
