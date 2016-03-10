@@ -85,12 +85,12 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    user_name: ENV['MAILTRAP_USER_NAME'] ,
-    password: ENV['MAILTRAP_PASSWORD'],
-    address: 'mailtrap.io',
-    domain: 'mailtrap.io',
-    port: '2525',
-    authentication: :cram_md5,
-    enable_starttls_auto: true
+    :user_name => ENV['SENDGRID_USERNAME'],
+    :password => ENV['SENDGRID_PASSWORD'],
+    :domain => 'heroku.com',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
   }
 end
